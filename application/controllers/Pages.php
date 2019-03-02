@@ -6,7 +6,7 @@
         public function index(){
 
            // $this->load->view('templates/header_login');
-            $this->load->view("pages/login.php");
+            //$this->load->view("pages/login.php");
            
         }
 
@@ -29,7 +29,7 @@
   
                     if ($check)  
                     {  
-                         redirect ('pages/view');
+                         redirect ('pages/view/');
 
                     } else {  
                        
@@ -53,6 +53,7 @@
                 show_404();
                 
             }
+            
             $data['title'] = ucfirst($page);
             $this->load->view('templates/header');
             $this->load->view('pages/'.$page, $data);
