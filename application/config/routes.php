@@ -51,6 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'pages/checklogin';
 $route['login'] = 'pages/checklogin';
+$route['pages/home'] = 'pages/view/home';
+$route['pages/supplier'] = 'pages/view/supplier';
 //$route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
