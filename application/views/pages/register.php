@@ -2,7 +2,7 @@
     <?php echo $this->session->flashdata('verify_msg'); ?>
 </p>
  
-<h4>User Registration Form</h4><br>
+<h4><b>User Registration Form</b></h4><br>
  
 <?php $attributes = array("name" => "registrationform");
 echo form_open("pages/register", $attributes);?>
