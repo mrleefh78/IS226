@@ -140,11 +140,7 @@ input[type=submit]:active {
 
 <body>
 
-     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">MediCount Online</a>      
-
-            
-        </nav>
+    
     <!-- Begin Page Content -->
     <div id="container">
         <form role="form" method="post" action="<?php echo base_url('pages/checkLogin'); ?>">
