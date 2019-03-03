@@ -6,7 +6,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Login</title>
 
+<link rel="stylesheet" href = "https://bootswatch.com/4/yeti/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="http://medicount.brightcare-assist.com/application/bootstrap/css/yeti/bootstrap.min.css">
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script> -->
 
+    
+
+     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet"> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script type='text/javascript' src="http://medicount.brightcare-assist.com/application/bootstrap/js/bootstrap.min.js"></script>
+   
+       
+      
+        <!-- <link rel="stylesheet" type="text/css" href = "<?php echo base_url(); ?>/application/bootstrap/css/yeti/bootstrap.min.css"/> -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <style>
 /* Basics */
@@ -140,7 +158,11 @@ input[type=submit]:active {
 
 <body>
 
-    
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">MediCount Online</a>      
+
+            
+        </nav>
     <!-- Begin Page Content -->
     <div id="container">
         <form role="form" method="post" action="<?php echo base_url('pages/checkLogin'); ?>">
