@@ -1,38 +1,44 @@
-<p>
-    <?php echo $this->session->flashdata('verify_msg'); ?>
-</p>
- 
-<h4><b>User Registration Form</b></h4><br>
- 
-<?php $attributes = array("name" => "registrationform");
-echo form_open("pages/register", $attributes);?>
-<table>
-    <tr>
-        <td><label for="name">User Name</label></td><td><input class="form-control" name="username" placeholder="User Name" type="text" value="<?php echo set_value('uname'); ?>" /> <span style="color:red"><?php echo form_error('username'); ?></span></td>
-    </tr>  
-    <tr>
-        <td><label for="name">First Name</label></td><td><input class="form-control" name="firstname" placeholder="First Name" type="text" value="<?php echo set_value('fname'); ?>" /> <span style="color:red"><?php echo form_error('firstname'); ?></span></td>
-    </tr>    
-    <tr>
-        <td><label for="name">Last Name</label></td><td><input class="form-control" name="lastname" placeholder="Last Name" type="text" value="<?php echo set_value('lname'); ?>" /> <span style="color:red"><?php echo form_error('lastname'); ?></span></td>
-    </tr>    
-    <tr>    
-        <td><label for="email">Email ID</label></td><td><input class="form-control" name="email" placeholder="Email-ID" type="text" value="<?php echo set_value('email'); ?>" /> <span style="color:red"><?php echo form_error('email'); ?></span></td>
-    </tr>    
-    <tr>    
-        <td><label for="subject">Password</label></td><td><input class="form-control" name="password" placeholder="Password" type="password" /> <span style="color:red"><?php echo form_error('password'); ?></span></td>
-    </tr>    
-       <tr>    
-        <td><label for="subject">Confirm Password</label></td><td><input class="form-control" name="cpassword" placeholder="Confirm Password" type="password" /> <span style="color:red"><?php echo form_error('cpassword'); ?></span></td>
-    </tr>
+<h2><?=$title?></h2>
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<?php echo validation_errors(); ?>
+<?php echo form_open('pages/register_view'); ?>
+  <fieldset>
+    
+  <div class="form-group">
+      <label for="exampleInputEmail1">Supplier Name</label>
+      <input type="text" class="form-control" id="supplier_name" name="supplier_name" aria-describedby="text" placeholder="Supplier Name">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Contact Person</label>
+      <input type="text" class="form-control" id="contact_person" name="contact_person" aria-describedby="text" placeholder="Contact Person">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleTextarea">Address</label>
+      <textarea class="form-control" id="address" name="address"  rows="3"></textarea>
+    </div>
 
-    <tr>    
-        <td></td>
-        <td><button name="submit" type="submit">Signup</button></td>        
-    </tr>
-</table>   
-
-<?php echo form_close(); ?>
- 
-<p style="color:green; font-style:bold"><?php echo $this->session->flashdata('msg_success'); ?></p>
-<p style="color:red; font-style:bold"><?php echo $this->session->flashdata('msg_error'); ?></p>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Contact no</label>
+      <input type="text" class="form-control" id="contact_no" name="contact_no" aria-describedby="text" placeholder="Contact No">
+      
+    </div>
+   
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp" placeholder="Enter email">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Website</label>
+      <input type="text" class="form-control" id="website" name="website" aria-describedby="text" placeholder="Website">
+      
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>
+</div>
+<div class="col-md-2"></div>
