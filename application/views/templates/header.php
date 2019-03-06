@@ -1,4 +1,6 @@
 <?php $this->load->helper('url'); ?>
+
+
 <html>
     <head>
         <title>MediCount Online</title>
@@ -34,8 +36,10 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url(); ?>home">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url(); ?>items/index">Inventory Items</a>
+                <li class="Inventory">
+
+                    <a class="nav-link" href="<?php echo base_url(); ?>items/item">Inventory Items</a>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Purchase Request</a>
@@ -52,7 +56,7 @@
                     <div class="dropdown-menu" >
                         <a class="dropdown-item" style="font-size:14px" href="#">Departments</a>
                         <a class="dropdown-item" style="font-size:14px" href="#">Locations</a>                    
-                        <a class="dropdown-item" style="font-size:14px" href="#">Item Class</a>
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>items/class">Item Class</a>
                         <a class="dropdown-item" style="font-size:14px" href="#">Item Sub-Class</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/register_view">Users</a>
