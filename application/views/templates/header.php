@@ -35,29 +35,30 @@
                     <a class="nav-link" href="<?php echo base_url(); ?>home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url(); ?>items/index">Inventory Items</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">Purchase Request</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Purchase Orders</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inventory Items</a>
+                    <a class="nav-link" href="<?php echo base_url(); ?>suppliers">Suppliers</a>
                 </li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown"  href="#" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
                     <div class="dropdown-menu" >
                         <a class="dropdown-item" style="font-size:14px" href="#">Departments</a>
-                        <a class="dropdown-item" style="font-size:14px" href="#">Locations</a>
-                        <a class="dropdown-item" style="font-size:14px" href="#">Inventory Items</a>
+                        <a class="dropdown-item" style="font-size:14px" href="#">Locations</a>                    
                         <a class="dropdown-item" style="font-size:14px" href="#">Item Class</a>
                         <a class="dropdown-item" style="font-size:14px" href="#">Item Sub-Class</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" style="font-size:14px" href="#">Users</a>
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/register_view">Users</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url(); ?>suppliers">Suppliers</a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
                 </li>
