@@ -26,6 +26,8 @@
 
         }
 
+       
+
         public function create(){
             
             $data['title'] = 'Create Suppliers';
@@ -41,13 +43,49 @@
 
             }
             else {
-                $this->supplier_model->create_supplier();
+                //$this->supplier_model->create_supplier();
                 // $this->load->view('suppliers/success');
-                redirect('suppliers');
+                //redirect('suppliers');
 
+                if ($this->supplier_model->create_supplier())
+                    {                             
+                        $this->session->set_flashdata('msg_success','Supplier added successfully!');
+                                
+                    }
+                    else
+                    {                
+                        $this->session->set_flashdata('msg_error','Error! Please try again later.');
+                        
+                    }
+
+                    redirect('suppliers');
+
+            }           
+
+        }
+
+       
+
+        public function edit($supplier_id = NULL){
+            $data['supplier'] =  $this->supplier_model->get_suppliers($supplier_id );
+            if(empty($data['supplier'])){
+                show_404();
             }
+            // $data['title'] = $data['supplier']['supplier_id'];
+            $data['title'] = 'Update Supplier';
 
-           
+            $this->load->view('templates/header');
+            $this->load->view('suppliers/edit', $data);
+            $this->load->view('templates/footer');
+        }
 
+        public function update($id){
+            $this->supplier_model->update_supplier($id);
+            redirect('suppliers');
+        }
+
+        public function delete($id){
+            $this->supplier_model->delete_supplier($id);
+            redirect('suppliers');
         }
     }
