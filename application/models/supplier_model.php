@@ -20,16 +20,48 @@
 
             $data = array(
                
-                'supplier_name' => $this->input->suppliers('supplier_name'),
-                'contact_person' => $this->input->suppliers('contact_person'),
-                'address' => $this->input->suppliers('address'),
-                'contact_no' => $this->input->suppliers('contact_no'),
-                'email' => $this->input->suppliers('email'),
-                'website' => $this->input->suppliers('website')
+                'supplier_name' => $this->input->post('supplier_name'),
+                'contact_person' => $this->input->post('contact_person'),
+                'address' => $this->input->post('address'),
+                'contact_no' => $this->input->post('contact_no'),
+                'email' => $this->input->post('email'),
+                'website' => $this->input->post('website'),
+                'updated_by' => 'test',
+                'updated_date' => date('Y-m-d H:i:s'),
+                'created_by' => 'test',
+                'created_date' => date('Y-m-d H:i:s')
 
             );
 
             return $this->db->insert('lkpsuppliers',$data);
+        }
+
+        public function update_supplier(){
+            $id = $this->input->post('supplier_id');
+
+            $data = array(
+               
+                'supplier_name' => $this->input->post('supplier_name'),
+                'contact_person' => $this->input->post('contact_person'),
+                'address' => $this->input->post('address'),
+                'contact_no' => $this->input->post('contact_no'),
+                'email' => $this->input->post('email'),
+                'website' => $this->input->post('website'),
+                'updated_by' => 'test',
+                'updated_date' => date('Y-m-d H:i:s'),
+                'created_by' => 'test',
+                'created_date' => date('Y-m-d H:i:s')
+
+            );
+
+            $this->db->where('supplier_id', $id);
+            return $this->db->update('lkpsuppliers',$data);
+        }
+
+        public function delete_supplier($id){
+            $this->db->where('supplier_id', $id);
+            $this->db->delete('lkpsuppliers');
+            return true;
         }
         
     
