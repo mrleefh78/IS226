@@ -6,34 +6,25 @@
   <fieldset>
     
   <div class="form-group">
-      <label for="exampleInputEmail1">Supplier Name</label>
-      <input type="text" class="form-control" id="supplier_name" name="supplier_name" aria-describedby="text" placeholder="Supplier Name">
+      <label for="username">User Name</label>
+      <input type="text" class="form-control" id="username" name="username" aria-describedby="text" placeholder="User Name">
       
     </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">Contact Person</label>
-      <input type="text" class="form-control" id="contact_person" name="contact_person" aria-describedby="text" placeholder="Contact Person">
+      <label for="firstname">First Name</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="text" placeholder="First Name">
       
     </div>
+    
     <div class="form-group">
-      <label for="exampleTextarea">Address</label>
-      <textarea class="form-control" id="address" name="address"  rows="3"></textarea>
+      <label for="lastname">Last Name</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="text" placeholder="Last Name">
+      
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Contact no</label>
-      <input type="text" class="form-control" id="contact_no" name="contact_no" aria-describedby="text" placeholder="Contact No">
-      
-    </div>
-   
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp" placeholder="Enter email">
-      
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Website</label>
-      <input type="text" class="form-control" id="website" name="website" aria-describedby="text" placeholder="Website">
+      <label for="email">Email ID</label>
+      <input type="text" class="form-control" id="email" name="email" aria-describedby="text" placeholder="Email">
       
     </div>
     
