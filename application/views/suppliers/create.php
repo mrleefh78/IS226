@@ -2,7 +2,8 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
 <?php echo validation_errors(); ?>
-<?php echo form_open('suppliers/create'); ?>
+<?php $entries = array("name" => "createform");
+echo form_open('suppliers/create', $entries); ?>
   <fieldset>
     
   <div class="form-group">
