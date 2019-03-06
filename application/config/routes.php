@@ -55,6 +55,7 @@ $route['suppliers/(:any)'] = 'suppliers/view/$1';
 $route['suppliers'] = 'suppliers/index';
 
 $route['items/update'] = 'items/update/$1';
+$route['pages/update'] = 'pages/update/$1';
 
 
 $route['default_controller'] = 'pages/view';

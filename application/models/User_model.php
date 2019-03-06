@@ -19,28 +19,77 @@ class User_model extends CI_model{
     }
 
 
-    public function set_user($id = 0)
-    {
-        $data = array(
-            'user_name' => $this->input->post('username'),
-            'first_name' => $this->input->post('firstname'),
-            'last_name' => $this->input->post('lastname'),
-            'user_email' => $this->input->post('email'),
-            'user_password' => $this->input->post('password'),
-            'updated_date' => date('Y-m-d H:i:s'),
-            'created_date' => date('Y-m-d H:i:s')
-        );
-            
-        if ($id == 0) {
-            return $this->db->insert('users', $data);
-        } else {
-            $this->db->where('user_id', $id);
-            return $this->db->update('users', $data);
-        }
+   
+
+        public function get_users($user_id = FALSE) {
+            if ($user_id === FALSE){
+                $query =  $this->db->get('users');
+                return $query ->result_array();
+            }
+
+            $query =  $this->db->get_where('users',array('user_id' => $user_id));
+            return $query ->row_array();
+
     }
 
      
-    }
+    
+ 
+    public function create_user(){
+           
+
+            $data = array(
+               
+                'user_name' => $this->input->post('user_name'),
+                'first_name' => $this->input->post('first_name'),
+                'last_name' => $this->input->post('last_name'),                
+                'user_email' => $this->input->post('email'),
+                'user_password' => $this->input->post('password'),
+                'updated_by' => 'test',
+                'updated_date' => date('Y-m-d H:i:s'),
+                'created_by' => 'test',
+                'created_date' => date('Y-m-d H:i:s')
+
+            );
+
+            return $this->db->insert('users',$data);
+        }
+
      
+
+
+
+     public function update_user(){
+            $id = $this->input->post('user_id');
+            //table field | textbox names
+
+            $data = array(
+               
+                'user_name' => $this->input->post('user_name'),
+                'user_password' => $this->input->post('password'),
+                'first_name' => $this->input->post('first_name'),
+                'last_name' => $this->input->post('last_name'),                
+                'user_email' => $this->input->post('email'),
+                'updated_by' => 'test',
+                'updated_date' => date('Y-m-d H:i:s'),
+                'created_by' => 'test',
+                'created_date' => date('Y-m-d H:i:s')
+
+            );
+
+            $this->db->where('user_id', $id);
+            return $this->db->update('users',$data);
+        }
+
+
+        public function delete_user($id){
+            $this->db->where('user_id', $id);
+            $this->db->delete('users');
+            return true;
+        
+        
+    
+    }
+}
  
 ?>

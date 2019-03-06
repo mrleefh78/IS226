@@ -10,13 +10,7 @@
            
         }
 
-        public function register_view(){
-
-            $this->load->view('templates/header');            
-            $this->load->view("pages/register.php");           
-            $this->load->view('templates/footer');
-
-        }
+       
 
         public function register()
             {
@@ -84,7 +78,89 @@
 
         }
 
+        public function register_view(){
+            $data['title'] = 'List of Users';
+           
+            $data['users'] =  $this->user_model->get_users();
+            $this->load->view('templates/header');
+            $this->load->view('pages/register_index', $data);
+            $this->load->view('templates/footer');
 
+        }
+
+        public function user_view($user_id = NULL){
+            
+           
+            $data['user'] =  $this->user_model->get_users($user_id);
+            if(empty($data['user'])){
+                show_404();
+            }
+            $data['title'] = $data['user']['user_id'];
+
+            $this->load->view('templates/header');
+            $this->load->view('pages/register_view', $data);
+            $this->load->view('templates/footer');
+
+        }
+
+        public function create(){
+            
+            $data['title'] = 'User Registration';
+
+            //$data['suppliers'] =  $this->supplier_model->get_suppliers();
+            $this->form_validation->set_rules('user_name','user_name','required');
+            // $this->form_validation->set_rules('contact_person','contact_person','required');
+
+            if( $this->form_validation->run()===FALSE){
+                $this->load->view('templates/header');
+                $this->load->view('pages/register_create', $data);
+                $this->load->view('templates/footer');
+
+            }
+            else {
+                //$this->supplier_model->create_supplier();
+                // $this->load->view('suppliers/success');
+                //redirect('suppliers');
+
+                if ($this->user_model->create_user())
+                    {                             
+                        $this->session->set_flashdata('msg_success','User added successfully!');
+                                
+                    }
+                    else
+                    {                
+                        $this->session->set_flashdata('msg_error','Error! Please try again later.');
+                        
+                    }
+
+                    redirect('pages/register_view');
+
+            }           
+
+        }
+        public function edit($user_id = NULL){
+            $data['user'] =  $this->user_model->get_users($user_id );
+            if(empty($data['user'])){
+                show_404();
+            }
+            // $data['title'] = $data['supplier']['supplier_id'];
+            $data['title'] = 'Update User';
+
+            $this->load->view('templates/header');
+            $this->load->view('pages/register_edit', $data);
+            $this->load->view('templates/footer');
+        }
+
+        public function update($id){
+            $this->user_model->update_user($id);
+            redirect('pages/register_view');
+        }
+
+        public function delete($id){
+            $this->user_model->delete_user($id);
+            redirect('pages/register_view');
+        }
+    
        
         
         public function view($page = 'home'){

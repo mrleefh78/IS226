@@ -17,13 +17,13 @@ echo form_open('items/update', $entries); ?>
  
      <div class="form-group">
       <label for="exampleInputEmail1">Item Class</label>
-      <input type="text" class="form-control" id="item_class" name="item_class" aria-describedby="text" placeholder="Item Class">
+      <input type="text" class="form-control" id="item_class" name="item_class" aria-describedby="text" placeholder="Item Class" value = "<?php echo $item['item_class_id']; ?>">
       
     </div>
 
      <div class="form-group">
       <label for="exampleInputEmail1">Item Sub Class</label>
-      <input type="text" class="form-control" id="item_sub" name="item_sub" aria-describedby="text" placeholder="Item Sub Class">
+      <input type="text" class="form-control" id="item_sub" name="item_sub" aria-describedby="text" placeholder="Item Sub Class" value = "<?php echo $item['item_sub_class_id']; ?>">
       
     </div>
     
