@@ -68,26 +68,26 @@
 
        
 
-        public function edit($supplier_id = NULL){
-            $data['supplier'] =  $this->supplier_model->get_suppliers($supplier_id );
-            if(empty($data['supplier'])){
+        public function edit($item_id = NULL){
+            $data['item'] =  $this->item_model->get_items($item_id );
+            if(empty($data['item'])){
                 show_404();
             }
             // $data['title'] = $data['supplier']['supplier_id'];
-            $data['title'] = 'Update Supplier';
+            $data['title'] = 'Update Inventory Items';
 
             $this->load->view('templates/header');
-            $this->load->view('suppliers/edit', $data);
+            $this->load->view('items/edit', $data);
             $this->load->view('templates/footer');
         }
 
         public function update($id){
-            $this->supplier_model->update_supplier($id);
-            redirect('suppliers');
+            $this->item_model->update_item($id);
+            redirect('items/item');
         }
 
         public function delete($id){
-            $this->supplier_model->delete_supplier($id);
-            redirect('suppliers');
+            $this->item_model->delete_item($id);
+            redirect('items/item');
         }
     }

@@ -2,14 +2,19 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
 <?php echo validation_errors(); ?>
-<?php echo form_open('items/create'); ?>
+<?php $entries = array("name" => "updateform");
+echo form_open('items/update', $entries); ?>
   <fieldset>
-    <div class="form-group">
+
+  <input type="hidden" class="form-control" id="item_id" name="item_id" aria-describedby="text" placeholder="Item Name" value = "<?php echo $item['item_id']; ?>">
+
+  <div class="form-group">
       <label for="exampleInputEmail1">Item Name</label>
-      <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="text" placeholder="Item Name">
+      <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="text" placeholder="Item Name" value = "<?php echo $item['item_name']; ?>">
       
     </div>
-
+    
+ 
      <div class="form-group">
       <label for="exampleInputEmail1">Item Class</label>
       <input type="text" class="form-control" id="item_class" name="item_class" aria-describedby="text" placeholder="Item Class">
@@ -21,10 +26,7 @@
       <input type="text" class="form-control" id="item_sub" name="item_sub" aria-describedby="text" placeholder="Item Sub Class">
       
     </div>
-
     
-
- 
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
 </form>

@@ -23,6 +23,10 @@
                 'item_name' => $this->input->post('item_name'),
                 'item_class_id' => $this->input->post('item_class'),
                 'item_sub_class_id' => $this->input->post('item_sub'),
+                'updated_by' => 'test',
+                'updated_date' => date('Y-m-d H:i:s'),
+                'created_by' => 'test',
+                'created_date' => date('Y-m-d H:i:s')
                
                 
             );
@@ -38,6 +42,10 @@
                 'item_name' => $this->input->post('item_name'),
                 'item_class_id' => $this->input->post('item_class'),
                 'item_sub_class_id' => $this->input->post('item_sub'),
+                'updated_by' => 'test',
+                'updated_date' => date('Y-m-d H:i:s'),
+                'created_by' => 'test',
+                'created_date' => date('Y-m-d H:i:s')
 
             );
 
@@ -45,7 +53,7 @@
             return $this->db->update('lkpitem',$data);
         }
 
-        public function delete_supplier($id){
+        public function delete_item($id){
             $this->db->where('item_id', $id);
             $this->db->delete('lkpitem');
             return true;
