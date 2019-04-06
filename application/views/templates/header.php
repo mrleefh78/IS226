@@ -55,9 +55,9 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown"  href="#" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
                     <div class="dropdown-menu" >
                         <a class="dropdown-item" style="font-size:14px" href="#">Departments</a>
-                        <a class="dropdown-item" style="font-size:14px" href="#">Locations</a>                    
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>locations">Locations</a>                    
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>items/item_class">Item Class</a>
-                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>items/class">Item Sub-Class</a>
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>items/item_subclass">Item Sub-Class</a>
 
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/register_view">Users</a>
