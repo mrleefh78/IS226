@@ -15,6 +15,17 @@
 
         }
 
+        public function get_locations($location_id = FALSE) {
+            if ($location_id === FALSE){
+                $query =  $this->db->get('lkplocation');
+                return $query ->result_array();
+            }
+
+            $query =  $this->db->get_where('lkplocation',array('id' => $location_id));
+            return $query ->row_array();
+
+        }
+
         public function create_supplier(){
             //$supplier_id = url_title($this->input->supplier('supplier_id'));
 
@@ -34,6 +45,20 @@
             );
 
             return $this->db->insert('lkpsuppliers',$data);
+        }
+
+        public function create_location(){
+            //$supplier_id = url_title($this->input->supplier('supplier_id'));
+
+            $data = array(
+               
+                'id' => $this->input->post('id'),
+                'description' => $this->input->post('description'),
+                
+
+            );
+
+            return $this->db->insert('lkplocation',$data);
         }
 
         public function update_supplier(){
@@ -58,9 +83,29 @@
             return $this->db->update('lkpsuppliers',$data);
         }
 
+         public function update_location(){
+            $id = $this->input->post('id');
+
+            $data = array(
+               
+                'id' => $this->input->post('id'),
+                'description' => $this->input->post('description'),
+                
+
+            );
+
+            $this->db->where('id', $id);
+            return $this->db->update('lkplocation',$data);
+        }
+
         public function delete_supplier($id){
             $this->db->where('supplier_id', $id);
             $this->db->delete('lkpsuppliers');
+            return true;
+        }
+         public function delete_location($id){
+            $this->db->where('id', $id);
+            $this->db->delete('lkplocation');
             return true;
         }
         

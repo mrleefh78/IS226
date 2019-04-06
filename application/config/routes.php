@@ -54,10 +54,15 @@ $route['suppliers/update'] = 'suppliers/update/$1';
 $route['suppliers/(:any)'] = 'suppliers/view/$1';
 $route['suppliers'] = 'suppliers/index';
 
+$route['locations/create'] = 'locations/create';
+$route['locations/update'] = 'locations/update/$1';
+$route['locations/(:any)'] = 'locations/view/$1';
+$route['locations'] = 'locations/index';
+
 $route['items/update'] = 'items/update/$1';
 $route['items/update_class'] = 'items/update_class/$1';
+$route['items/update_subclass'] = 'items/update_subclass/$1';
 $route['pages/update'] = 'pages/update/$1';
-
 
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
