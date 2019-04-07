@@ -10,6 +10,10 @@
       <th></th>
       <th scope="col">Location ID</th>
       <th scope="col">Location Name</th>
+      <th scope="col">Created by</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Updated by</th>
+       <th scope="col">Updated Date</th>
       
     </tr>
   </thead>
@@ -24,6 +28,10 @@
     </form>
       <td><?php echo $loc['id']; ?></td>
       <td><?php echo $loc['description']; ?></td>
+      <td><?php echo $loc['created_by']; ?></td>
+      <td><?php echo $loc['created_date']; ?></td>
+      <td><?php echo $loc['updated_by']; ?></td>
+      <td><?php echo $loc['updated_date']; ?></td>
     
      
     </tr>

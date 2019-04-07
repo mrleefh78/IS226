@@ -10,6 +10,10 @@
       <th></th>
       <th scope="col">Department ID</th>
       <th scope="col">Department Name</th>
+      <th scope="col">Created by</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Updated by</th>
+       <th scope="col">Updated Date</th>
       
     </tr>
   </thead>
@@ -24,6 +28,10 @@
     </form>
       <td><?php echo $dept['id']; ?></td>
       <td><?php echo $dept['description']; ?></td>
+      <td><?php echo $dept['created_by']; ?></td>
+      <td><?php echo $dept['created_date']; ?></td>
+      <td><?php echo $dept['updated_by']; ?></td>
+      <td><?php echo $dept['updated_date']; ?></td>
     
      
     </tr>
