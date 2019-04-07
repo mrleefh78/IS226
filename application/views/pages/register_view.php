@@ -1,43 +1,29 @@
-<h2><?php echo $supplier['supplier_id']; ?></h2>
-
+<h2><?php echo $user['user_id']; ?></h2>
 
 <div class="col-md-2"></div>
 <div class="col-md-8">
 <form>
   <fieldset>
     
-  <div class="form-group">
-      <label for="exampleInputEmail1">Supplier Name</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Supplier Name" value = "<?php echo $supplier['supplier_name']; ?>">
-      
-    </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">Contact Person</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact Person" value = "<?php echo $supplier['contact_person']; ?>">
-      
-    </div>
-    <div class="form-group">
-      <label for="exampleTextarea">Address</label>
-      <textarea class="form-control" id="exampleTextarea" rows="3" ><?php echo $supplier['address']; ?></textarea>
+      <label for="user_name">User Name</label>
+      <input type="text" class="form-control" id="user_name" aria-describedby="text" placeholder="User Name" value = "<?php echo $user['user_name']; ?>">      
     </div>
 
     <div class="form-group">
-      <label for="exampleInputEmail1">Contact no</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contact No" value = "<?php echo $supplier['contact_no']; ?>">
-      
+      <label for="first_name">First Name</label>
+      <input type="text" class="form-control" id="first_name" aria-describedby="text" placeholder="First Name" value = "<?php echo $user['contact_person']; ?>">      
     </div>
+
+    <div class="form-group">
+      <label for="last_name">First Name</label>
+      <input type="text" class="form-control" id="last_name" aria-describedby="text" placeholder="Last Name" value = "<?php echo $user['contact_person']; ?>">      
+    </div>    
    
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value = "<?php echo $supplier['email']; ?>">
-      
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Website</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Website" value = "<?php echo $supplier['website']; ?>">
-      
-    </div>
-    
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value = "<?php echo $user['email']; ?>"> 
+       
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
 </form>

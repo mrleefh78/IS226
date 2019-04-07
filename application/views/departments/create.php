@@ -6,12 +6,12 @@
 echo form_open('departments/create', $entries); ?>
   <fieldset>
     
-  <div class="form-group">
+  	<div class="form-group">
       <label for="DepartmentName">Department Name</label>
       <input type="text" class="form-control" id="description" name="description" aria-describedby="text" placeholder="Department Name"> 
-          
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
-</form>
 </div>
 <div class="col-md-2"></div>
