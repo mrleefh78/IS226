@@ -59,6 +59,11 @@ $route['locations/update'] = 'locations/update/$1';
 $route['locations/(:any)'] = 'locations/view/$1';
 $route['locations'] = 'locations/index';
 
+$route['departments/create'] = 'departments/create';
+$route['departments/update'] = 'departments/update/$1';
+$route['departments/(:any)'] = 'departments/view/$1';
+$route['departments'] = 'departments/index';
+
 $route['items/update'] = 'items/update/$1';
 $route['items/update_class'] = 'items/update_class/$1';
 $route['items/update_subclass'] = 'items/update_subclass/$1';

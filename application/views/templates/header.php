@@ -54,7 +54,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown"  href="#" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
                     <div class="dropdown-menu" >
-                        <a class="dropdown-item" style="font-size:14px" href="#">Departments</a>
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>departments">Departments</a>
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>locations">Locations</a>                    
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>items/item_class">Item Class</a>
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>items/item_subclass">Item Sub-Class</a>
