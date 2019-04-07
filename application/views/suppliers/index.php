@@ -10,9 +10,10 @@
       <th></th>
       <th scope="col">Supplier ID</th>
       <th scope="col">Supplier Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Contact No</th>
-      <th scope="col">Contact Person</th>
+       <th scope="col">Contact Person</th>
+      <th scope="col">Contact No</th>     
+      <th scope="col">Address</th> 
+       <th scope="col">Website</th>
       <th scope="col">Email</th>
     </tr>
   </thead>
@@ -27,10 +28,14 @@
     </form>
       <td><?php echo $supp['supplier_id']; ?></td>
       <td><?php echo $supp['supplier_name']; ?></td>
+       <td><?php echo $supp['contact_person']; ?></td>
+        <td><?php echo $supp['contact_no']; ?></td>        
       <td><?php echo $supp['address']; ?></td>
-      <td><?php echo $supp['contact_no']; ?></td>
-      <td><?php echo $supp['contact_person']; ?></td>
-      <td><?php echo $supp['email']; ?></td>
+       <td><?php echo $supp['website']; ?></td>
+       <td><?php echo $supp['email']; ?></td>
+     
+     
+     
      
     </tr>
     <?php endforeach; ?>

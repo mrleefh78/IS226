@@ -107,9 +107,11 @@
             
             $data['title'] = 'User Registration';
 
-            //$data['suppliers'] =  $this->supplier_model->get_suppliers();
-            $this->form_validation->set_rules('user_name','user_name','required');
-            // $this->form_validation->set_rules('contact_person','contact_person','required');
+           $this->form_validation->set_rules('user_name','user_name','required');
+            $this->form_validation->set_rules('password','password','required');
+            $this->form_validation->set_rules('first_name','first_name','required');
+            $this->form_validation->set_rules('last_name','last_name','required');           
+            $this->form_validation->set_rules('email','email','required');
 
             if( $this->form_validation->run()===FALSE){
                 $this->load->view('templates/header');

@@ -34,7 +34,10 @@
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
             $this->form_validation->set_rules('supplier_name','supplier_name','required');
-            // $this->form_validation->set_rules('contact_person','contact_person','required');
+            $this->form_validation->set_rules('supplier_name','supplier_name','required');
+            $this->form_validation->set_rules('contact_person','contact_person','required');
+            $this->form_validation->set_rules('address','address','required');
+            $this->form_validation->set_rules('contact_no','contact_no','required');
 
             if( $this->form_validation->run()===FALSE){
                 $this->load->view('templates/header');
