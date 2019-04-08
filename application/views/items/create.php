@@ -1,4 +1,4 @@
-<h2><?=$title?></h2>
+<h2>Create Inventory Items</h2>
 <div class="col-md-2"></div>
 <div class="col-md-8">
 <?php echo validation_errors(); ?>
@@ -10,11 +10,13 @@
       
     </div>
 
-     <div class="form-group">
-      <label for="exampleInputEmail1">Item Class</label>
-      <input type="text" class="form-control" id="item_class" name="item_class" aria-describedby="text" placeholder="Item Class">
-      
-    </div>
+      <div class="form-group"> 
+        <!--dropdown input--> 
+        <label class="title">Item Class </label> 
+        <?php echo form_dropdown('item_class', $job_positions, '', 'class="form-control"');?> 
+            
+    </div> 
+
 
      <div class="form-group">
       <label for="exampleInputEmail1">Item Sub Class</label>

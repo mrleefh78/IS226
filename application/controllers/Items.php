@@ -1,7 +1,11 @@
 <?php
 
     class Items extends CI_Controller {
+        function __construct() { 
+        parent::__construct(); 
+        }
         public function index(){
+
         }
         public function item(){
             $data['title'] = 'List of Inventory Items';           
@@ -26,8 +30,8 @@
       
         public function create(){
             
-            $data['title'] = 'Create Inventory Items';
-       
+            //$data['title'] = 'Create Inventory Items';
+        $data['job_positions'] = $this->item_model->get_itemclassDrop(); 
             $this->form_validation->set_rules('item_name','item_name','required');          
 
             if( $this->form_validation->run()===FALSE){

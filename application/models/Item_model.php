@@ -1,6 +1,7 @@
 <?php
     class Item_model extends CI_Model{
         public function _construct(){
+            parent::__construct();     
             $this->load->database();
         }
 
@@ -159,4 +160,15 @@
             $this->db->delete('lkpitemsubclass');
             return true;
         }
+
+        public function get_itemclassDrop() { 
+        $result = $this->db-> select('item_id,item_name') -> get('lkpitemclass') -> result_array(); 
+ 
+        $job_position = array(); 
+        foreach($result as $r) { 
+            $job_position[$r['item_id']] = $r['item_name']; 
+        } 
+        $job_position[''] = 'Select Item Class'; 
+        return $job_position; 
+        } 
     }
