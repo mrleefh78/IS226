@@ -9,7 +9,7 @@
         }
         public function item(){
             $data['title'] = 'List of Inventory Items';           
-            $data['items'] =  $this->item_model->get_items();
+            $data['items'] =  $this->item_model->get_all_items();
             $this->load->view('templates/header');
             $this->load->view('items/index', $data);
             $this->load->view('templates/footer');

@@ -15,11 +15,26 @@
             return $query ->row_array();
 
         }
+
+        public function get_all_items($item_id = FALSE) {
+            if ($item_id === FALSE){
+                $query =  $this->db->get('vwitems');
+                return $query ->result_array();
+            }
+
+            $query =  $this->db->get_where('lkpitem',array('item_id' => $item_id));
+            return $query ->row_array();
+
+        }
         
         public function create_item(){
             $data = array(
                
                 'item_name' => $this->input->post('item_name'),
+                'quantity' => $this->input->post('quantity'),
+                'uom' => $this->input->post('uom'),
+                'reorder_level' => $this->input->post('reorder_level'),
+                'uom' => $this->input->post('uom'),
                 'item_class_id' => $this->input->post('item_class'),
                 'item_sub_class_id' => $this->input->post('item_sub'),
                 'updated_by' => 'test',
