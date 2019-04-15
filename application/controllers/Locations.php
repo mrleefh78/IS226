@@ -4,17 +4,17 @@
         public function index(){
             
             $data['title'] = 'List of Locations';
-            $data['locations'] =  $this->supplier_model->get_locations();
+            $data['locations'] =  $this->Lookup_model->get_locations();
             $this->load->view('templates/header');
             $this->load->view('locations/index', $data);
             $this->load->view('templates/footer');
 
         }
 
-        public function view($supplier_id = NULL){
+        public function view($loc_id = NULL){
             
            
-            $data['supplier'] =  $this->supplier_model->get_locations($supplier_id);
+            $data['supplier'] =  $this->Lookup_model->get_locations($loc_id);
             if(empty($data['supplier'])){
                 show_404();
             }
@@ -46,7 +46,7 @@
                 // $this->load->view('suppliers/success');
                 //redirect('suppliers');
 
-                if ($this->supplier_model->create_location())
+                if ($this->Lookup_model->create_location())
                     {                             
                         $this->session->set_flashdata('msg_success','Supplier added successfully!');
                                 
@@ -66,7 +66,7 @@
        
 
         public function edit($id = NULL){
-            $data['location'] =  $this->supplier_model->get_locations($id);
+            $data['location'] =  $this->Lookup_model->get_locations($id);
             if(empty($data['location'])){
                 show_404();
             }
@@ -79,12 +79,12 @@
         }
 
         public function update($id){
-            $this->supplier_model->update_location($id);
+            $this->Lookup_model->update_location($id);
             redirect('locations');
         }
 
         public function delete($id){
-            $this->supplier_model->delete_location($id);
+            $this->Lookup_model->delete_location($id);
             redirect('locations');
         }
 

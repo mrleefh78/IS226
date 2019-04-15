@@ -75,9 +75,16 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'brightcare-assist.com',
-	'username' => 'brigh_madjuslee',
-	'password' => '@dm1nK3y',
+	/*server*/
+	// 'hostname' => 'brightcare-assist.com',
+	// 'username' => 'brigh_madjuslee',
+	// 'password' => '@dm1nK3y',
+
+	/*localhost*/
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => 'root',
+
 	'database' => 'brightc1_medicount',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
