@@ -1,4 +1,4 @@
-<h2><?=$title?></h2>
+<h2>Create User</h2>
 <div class="col-md-2"></div>
 <div class="col-md-8">
 <?php echo validation_errors(); ?>
