@@ -42,10 +42,19 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Purchase Request</a>
+                    <a class="nav-link" href="<?php echo base_url(); ?>requests">Item Request</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Purchase Orders</a>
+                    <a class="nav-link" href="<?php echo base_url(); ?>release">Item Release</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url(); ?>pr">Purchase Request</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url(); ?>po">Purchase Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url(); ?>ro">Receieve Orders</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url(); ?>suppliers">Suppliers</a>

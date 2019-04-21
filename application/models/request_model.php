@@ -6,11 +6,11 @@
 
         public function get_requests($req_id = FALSE) {
             if ($req_id === FALSE){
-                $query =  $this->db->get('txn_request');
+                $query =  $this->db->get('vwrequest');
                 return $query ->result_array();
             }
 
-            $query =  $this->db->get_where('txn_request',array('req_id' => $req_id));
+            $query =  $this->db->get_where('vwrequest',array('req_id' => $req_id));
             return $query ->row_array();
         }
         
@@ -37,7 +37,7 @@
 
   
         public function update_request(){
-            $id = $this->input->post('supplier_id');
+            $id = $this->input->post('req_id');
 
             $data = array(
                

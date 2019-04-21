@@ -49,6 +49,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['po/create'] = 'po/create';
+$route['po/update'] = 'po/update/$1';
+$route['po/(:any)'] = 'po/view/$1';
+$route['po'] = 'po/index';
+
+$route['pr/create'] = 'pr/create';
+$route['pr/update'] = 'pr/update/$1';
+$route['pr/(:any)'] = 'pr/view/$1';
+$route['pr'] = 'pr/index';
+
+$route['ro/create'] = 'ro/create';
+$route['ro/update'] = 'ro/update/$1';
+$route['ro/(:any)'] = 'ro/view/$1';
+$route['ro'] = 'ro/index';
+
+$route['release/create'] = 'release/create';
+$route['release/update'] = 'release/update/$1';
+$route['release/(:any)'] = 'release/view/$1';
+$route['release'] = 'releases/index';
+
+$route['requests/create'] = 'requests/create';
+$route['requests/update'] = 'requests/update/$1';
+$route['requests/(:any)'] = 'requests/view/$1';
+$route['requests'] = 'requests/index';
+
 $route['suppliers/create'] = 'suppliers/create';
 $route['suppliers/update'] = 'suppliers/update/$1';
 $route['suppliers/(:any)'] = 'suppliers/view/$1';

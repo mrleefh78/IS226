@@ -10,7 +10,7 @@
                 return $query ->result_array();
             }
 
-            $query =  $this->db->get_where('txn_po',array('pr_id' => $id));
+            $query =  $this->db->get_where('txn_po',array('po_id' => $id));
             return $query ->row_array();
         }
         
@@ -76,7 +76,7 @@
     public function create_po_item(){
         $data = array(
            
-            'po_id' => $this->input->post('pr_id'),
+            'po_id' => $this->input->post('po_id'),
             'item_id' => $this->input->post('item_id'),
             'quantity' => $this->input->post('quantity'),
             'uom' => $this->input->post('uom'),
