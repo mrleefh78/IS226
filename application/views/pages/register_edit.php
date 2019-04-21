@@ -15,22 +15,27 @@ echo form_open('pages/update', $entries); ?>
     
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" name="password" aria-describedby="text" placeholder="Password" value = "<?php echo $user['user_password']; ?>">      
+      <input type="password" class="form-control" id="password" name="password" aria-describedby="text" placeholder="Enter Password" value = "<?php echo $user['user_password']; ?>">      
     </div>
 
     <div class="form-group">
       <label for="first_name">First Name</label>
-      <input type="text" class="form-control" id="first_name" name="first_name" aria-describedby="text" placeholder="First Name" value = "<?php echo $user['first_name']; ?>">      
+      <input type="text" class="form-control" id="first_name" name="first_name" aria-describedby="text" placeholder="Enter First Name" value = "<?php echo $user['first_name']; ?>">      
     </div>
    
     <div class="form-group">
       <label for="last_name">Last Name</label>
-      <input type="text" class="form-control" id="last_name" name="last_name" aria-describedby="text" placeholder="Last Name" value = "<?php echo $user['last_name']; ?>">      
+      <input type="text" class="form-control" id="last_name" name="last_name" aria-describedby="text" placeholder="Enter Last Name" value = "<?php echo $user['last_name']; ?>">      
     </div>
 
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp" placeholder="Enter email" value = "<?php echo $user['user_email']; ?>">      
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Account Type</label>
+      <input type="text" class="form-control" id="account_type" name="account_type"  aria-describedby="text" placeholder="Enter Account Type" value = "<?php echo $user['account_type']; ?>">      
     </div>
     
     <button type="submit" class="btn btn-primary">Submit</button>
