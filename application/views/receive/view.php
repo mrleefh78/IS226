@@ -1,4 +1,4 @@
-<h2><?php echo $request['pr']; ?></h2>
+<h2><?php echo $request['requests']; ?></h2>
 
 
 <div class="col-md-2"></div>
