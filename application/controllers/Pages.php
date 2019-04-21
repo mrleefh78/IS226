@@ -107,13 +107,14 @@
             
             //$data['title'] = 'User Registration';
 
-           $this->form_validation->set_rules('user_name','user_name','required');
-            $this->form_validation->set_rules('password','password','required');
-            $this->form_validation->set_rules('first_name','first_name','required');
-            $this->form_validation->set_rules('last_name','last_name','required');           
-            $this->form_validation->set_rules('email','email','required');
- 
+         $this->form_validation->set_rules('user_name', 'user_name', 'trim|required|alpha|min_length[3]|max_length[50]');
 
+             $this->form_validation->set_rules('first_name', 'first_name', 'trim|required|alpha|min_length[3]|max_length[50]');
+                $this->form_validation->set_rules('last_name', 'last_ame', 'trim|required|alpha|min_length[3]|max_length[50]');
+
+                $this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|is_unique[users.user_email]');
+                $this->form_validation->set_rules('password', 'password', 'trim|required|md5');
+                
            
             if( $this->form_validation->run()===FALSE){
                  $options['options'] = array(
