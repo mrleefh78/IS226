@@ -12,41 +12,7 @@
 
        
 
-        public function register()
-            {
-                $this->form_validation->set_rules('firstname', 'First Name', 'trim|required|alpha|min_length[3]|max_length[50]');
-                $this->form_validation->set_rules('lastname', 'Last Name', 'trim|required|alpha|min_length[3]|max_length[50]');
-
-                $this->form_validation->set_rules('email', 'Email ID', 'trim|required|valid_email|is_unique[users.user_email]');
-                $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
-                $this->form_validation->set_rules('cpassword', 'Confirm Password', 'trim|required|matches[password]|md5');
-
-                
-                
-                $data['title'] = 'Register';
-                
-                if ($this->form_validation->run() === FALSE)
-                {            
-                    $this->load->view('templates/header', $data);
-                    $this->load->view('pages/register');
-                    $this->load->view('templates/footer');
-         
-                }
-                else
-                {
-                    $this->load->model('user_model');   
-                    if ($this->user_model->set_user())
-                    {                             
-                        $this->session->set_flashdata('msg_success','Registration Successful!');
-                        redirect('pages/register');            
-                    }
-                    else
-                    {                
-                        $this->session->set_flashdata('msg_error','Error! Please try again later.');
-                        redirect('pages/register');
-                    }
-                }
-            }
+        
         
         public function checkLogin(){
        
@@ -107,13 +73,14 @@
             
             //$data['title'] = 'User Registration';
 
-         $this->form_validation->set_rules('user_name', 'user_name', 'trim|required|alpha|min_length[3]|max_length[50]');
+         $this->form_validation->set_rules('user_name', 'User Name', 'trim|required|alpha|min_length[3]|max_length[50]');
 
-             $this->form_validation->set_rules('first_name', 'first_name', 'trim|required|alpha|min_length[3]|max_length[50]');
-                $this->form_validation->set_rules('last_name', 'last_ame', 'trim|required|alpha|min_length[3]|max_length[50]');
+             $this->form_validation->set_rules('first_name', 'First Name', 'trim|required|alpha|min_length[3]|max_length[50]');
+                $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|alpha|min_length[3]|max_length[50]');
 
-                $this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|is_unique[users.user_email]');
-                $this->form_validation->set_rules('password', 'password', 'trim|required|md5');
+                $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.user_email]');
+                $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
+                
                 
            
             if( $this->form_validation->run()===FALSE){
