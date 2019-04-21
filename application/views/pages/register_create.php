@@ -26,6 +26,14 @@ echo form_open('pages/create', $entries); ?>
       <label for="email">Email address</label>
       <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp" placeholder="Enter email" ">      
   </div>
+
+  <div class="form-group">      
+
+        <!--dropdown input--> 
+        <label class="title">Account Type </label> 
+        <?php echo form_dropdown('account_type', $options, '', 'class="form-control"');?> 
+            
+  </div> 
     
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>

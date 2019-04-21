@@ -105,18 +105,27 @@
 
         public function create(){
             
-            $data['title'] = 'User Registration';
+            //$data['title'] = 'User Registration';
 
            $this->form_validation->set_rules('user_name','user_name','required');
             $this->form_validation->set_rules('password','password','required');
             $this->form_validation->set_rules('first_name','first_name','required');
             $this->form_validation->set_rules('last_name','last_name','required');           
             $this->form_validation->set_rules('email','email','required');
+ 
 
             if( $this->form_validation->run()===FALSE){
                 $this->load->view('templates/header');
                 $this->load->view('pages/register_create', $data);
                 $this->load->view('templates/footer');
+
+
+                 $options['options'] = array(
+                 '0'  => 'Please select account type',
+                 'Admin'  => 'Admin',
+                 'User'  => 'User'  
+
+
 
             }
             else {

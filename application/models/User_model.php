@@ -44,7 +44,7 @@ class User_model extends CI_model{
                 'first_name' => $this->input->post('first_name'),
                 'last_name' => $this->input->post('last_name'),                
                 'user_email' => $this->input->post('email'),
-                'user_password' => $this->input->post('password'),
+                'user_password' => md5($this->input->post ('password')),
                 'updated_by' => 'test',
                 'updated_date' => date('Y-m-d H:i:s'),
                 'created_by' => 'test',
@@ -66,7 +66,7 @@ class User_model extends CI_model{
             $data = array(
                
                 'user_name' => $this->input->post('user_name'),
-                'user_password' => $this->input->post('password'),
+                'user_password' => md5($this->input->post ('password')),
                 'first_name' => $this->input->post('first_name'),
                 'last_name' => $this->input->post('last_name'),                
                 'user_email' => $this->input->post('email'),
