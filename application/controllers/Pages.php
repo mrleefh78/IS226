@@ -114,18 +114,17 @@
             $this->form_validation->set_rules('email','email','required');
  
 
+           
             if( $this->form_validation->run()===FALSE){
-                $this->load->view('templates/header');
-                $this->load->view('pages/register_create', $data);
-                $this->load->view('templates/footer');
-
-
                  $options['options'] = array(
                  '0'  => 'Please select account type',
                  'Admin'  => 'Admin',
-                 'User'  => 'User'  
-
-
+                 'User'  => 'User'                
+                  
+                );
+                $this->load->view('templates/header');
+                $this->load->view('pages/register_create', $options);
+                $this->load->view('templates/footer');
 
             }
             else {
