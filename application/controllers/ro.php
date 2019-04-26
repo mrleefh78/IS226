@@ -4,9 +4,9 @@
         public function index(){
             
             $data['title'] = 'List of Receive Orders';
-            $data['re'] =  $this->receive_model->get_receive();
+            $data['receives'] =  $this->receive_model->get_receive();
             $this->load->view('templates/header');
-            $this->load->view('receive/index', $data);
+            $this->load->view('ro/index', $data);
             $this->load->view('templates/footer');
 
         }
@@ -14,14 +14,14 @@
         public function view($re_id = NULL){
             
            
-            $data['re'] =  $this->receive_model->get_receive($re_id);
-            if(empty($data['re'])){
+            $data['receives'] =  $this->receive_model->get_receive($re_id);
+            if(empty($data['receives'])){
                 show_404();
             }
-            $data['title'] = $data['re']['receive_id'];
+            $data['title'] = $data['receives']['receive_id'];
 
             $this->load->view('templates/header');
-            $this->load->view('receive/view', $data);
+            $this->load->view('ro/view', $data);
             $this->load->view('templates/footer');
 
         }
@@ -41,7 +41,7 @@
 
             if( $this->form_validation->run()===FALSE){
                 $this->load->view('templates/header');
-                $this->load->view('receive/create', $data);
+                $this->load->view('ro/create', $data);
                 $this->load->view('templates/footer');
 
             }
@@ -61,7 +61,7 @@
                         
                     }
 
-                    redirect('po');
+                    redirect('ro');
 
             }           
 
@@ -69,26 +69,26 @@
 
        
 
-        public function edit($pr_id = NULL){
-            $data['re'] =  $this->pr_model->get_receive($pr_id );
-            if(empty($data['re'])){
+        public function edit($po_id = NULL){
+            $data['ro'] =  $this->receive_model->get_receive($po_id );
+            if(empty($data['ro'])){
                 show_404();
             }
             // $data['title'] = $data['supplier']['supplier_id'];
             $data['title'] = 'Update Receive Order';
 
             $this->load->view('templates/header');
-            $this->load->view('receive/edit', $data);
+            $this->load->view('ro/edit', $data);
             $this->load->view('templates/footer');
         }
 
         public function update($id){
             $this->receive_model->update_receive($id);
-            redirect('receive');
+            redirect('ro');
         }
 
         public function delete($id){
             $this->receive_model->delete_receive($id);
-            redirect('receive');
+            redirect('ro');
         }
     }

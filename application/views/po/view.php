@@ -7,35 +7,33 @@
   <fieldset>
     
   <div class="form-group">
-      <label for="supplier_name">ID</label>
-      <input type="text" class="form-control" id="release_id" aria-describedby="text" placeholder="Request ID" value = "<?php echo $request['req_id']; ?>">
+      <label for="po_id">ID</label>
+      <input type="text" class="form-control" id="po_id" aria-describedby="text" placeholder="PO ID" value = "<?php echo $po['po_id']; ?>">
       
     </div>
     <div class="form-group">
-      <label for="contact_person">Date</label>
-      <input type="text" class="form-control" id="req_id" aria-describedby="text" placeholder="Date" value = "<?php echo $request['req_date']; ?>">
+      <label for="po_date">PO Date</label>
+      <input type="text" class="form-control" id="po_date" name="po_date" aria-describedby="text" placeholder="PO Date" value = "<?php echo $po['po_date']; ?>">
       
-    </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <textarea class="form-control" id="address" rows="3" ><?php echo $request['address']; ?></textarea>
     </div>
 
     <div class="form-group">
-      <label for="contact_no">Contact no</label>
-      <input type="text" class="form-control" id="contact_no" aria-describedby="text" placeholder="Contact No" value = "<?php echo $request['contact_no']; ?>">
+      <label for="pr_id">PR No</label>
+      <input type="text" class="form-control" id="pr_no" name="pr_id" aria-describedby="text" placeholder="PR No" value = "<?php echo $po['pr_id']; ?>">
       
     </div>
-   
+          
     <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value = "<?php echo $request['email']; ?>">
+      <label for="email">PO By</label>
+      <input type="text" class="form-control" id="req_by" name="po_by"  aria-describedby="po_by" placeholder="PO By" value = "<?php echo $po['po_by']; ?>">
       
     </div>
+
+  
+
     <div class="form-group">
-      <label for="website">Website</label>
-      <input type="text" class="form-control" id="website" aria-describedby="text" placeholder="Website" value = "<?php echo $request['website']; ?>">
-      
+      <label for="remarks">Remarks</label>
+      <textarea class="form-control" id="req_notes" name="remarks"  rows="3"><?php echo $po['remarks']; ?></textarea>
     </div>
     
     <button type="submit" class="btn btn-primary">Submit</button>

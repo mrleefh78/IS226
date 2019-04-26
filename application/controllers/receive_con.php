@@ -61,7 +61,7 @@
                         
                     }
 
-                    redirect('po');
+                    redirect('receive');
 
             }           
 

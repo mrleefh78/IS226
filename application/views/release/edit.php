@@ -6,7 +6,7 @@
 echo form_open('release/update', $entries); ?>
   <fieldset>
 
-  <input type="hidden" class="form-control" id="req_id" name="req_id" aria-describedby="text" placeholder="ID" value = "<?php echo $release['release_id']; ?>">
+  <input type="hidden" class="form-control" id="release_id" name="release_id" aria-describedby="text" placeholder="ID" value = "<?php echo $release['release_id']; ?>">
     
   <div class="form-group">
       <label for="req_date">Request Date</label>
@@ -46,7 +46,7 @@ echo form_open('release/update', $entries); ?>
 
     <div class="form-group">
       <label for="req_notes">Notes</label>
-      <textarea class="form-control" id="req_notes" name="req_notes"  rows="3"><?php echo $request['req_notes']; ?></textarea>
+      <textarea class="form-control" id="req_notes" name="req_notes"  rows="3"><?php echo $release['req_notes']; ?></textarea>
     </div>
 
     

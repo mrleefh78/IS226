@@ -3,42 +3,40 @@
 <div class="col-md-8">
 <?php echo validation_errors(); ?>
 <?php $entries = array("name" => "updateform");
-echo form_open('suppliers/update', $entries); ?>
+echo form_open('ro/update', $entries); ?>
   <fieldset>
 
-  <input type="hidden" class="form-control" id="supplier_id" name="supplier_id" aria-describedby="text" placeholder="Supplier Name" value = "<?php echo $supplier['supplier_id']; ?>">
+  <input type="hidden" class="form-control" id="receive_id" name="receive_id" aria-describedby="text" placeholder="receive_id" value = "<?php echo $ro['receive_id']; ?>">
     
   <div class="form-group">
-      <label for="supplier_name">Supplier Name</label>
-      <input type="text" class="form-control" id="supplier_name" name="supplier_name" aria-describedby="text" placeholder="Supplier Name" value = "<?php echo $supplier['supplier_name']; ?>">
+      <label for="po_date">Receive Date</label>
+      <input type="text" class="form-control" id="receive_date" name="receive_date" aria-describedby="text" placeholder="Receive Date" value = "<?php echo $ro['receive_date']; ?>">
       
-    </div>
-    <div class="form-group">
-      <label for="contact_person">Contact Person</label>
-      <input type="text" class="form-control" id="contact_person" name="contact_person" aria-describedby="text" placeholder="Contact Person" value = "<?php echo $supplier['contact_person']; ?>">
-      
-    </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <textarea class="form-control" id="address" name="address"  rows="3"><?php echo $supplier['address']; ?></textarea>
     </div>
 
     <div class="form-group">
-      <label for="contact_no">Contact no</label>
-      <input type="text" class="form-control" id="contact_no" name="contact_no" aria-describedby="text" placeholder="Contact No" value = "<?php echo $supplier['contact_no']; ?>">
+      <label for="po_id">PO No</label>
+      <input type="text" class="form-control" id="po_no" name="po_id" aria-describedby="text" placeholder="PO No" value = "<?php echo $ro['po_id']; ?>">
       
     </div>
-   
+          
     <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp" placeholder="Enter email" value = "<?php echo $supplier['email']; ?>">
+      <label for="email">Supplier</label>
+      <input type="text" class="form-control" id="supplier_id" name="receive_by"  aria-describedby="supplier_id" placeholder="Supplier By" value = "<?php echo $ro['supplier_id']; ?>">
       
     </div>
+
     <div class="form-group">
-      <label for="website">Website</label>
-      <input type="text" class="form-control" id="website" name="website" aria-describedby="text" placeholder="Website" value = "<?php echo $supplier['website']; ?>">
+      <label for="email">Receive By</label>
+      <input type="text" class="form-control" id="receive_by" name="receive_by"  aria-describedby="receive_by" placeholder="Receive By" value = "<?php echo $ro['receive_by']; ?>">
       
     </div>
+
+    <div class="form-group">
+      <label for="remarks">Remarks</label>
+      <textarea class="form-control" id="remarks" name="remarks"  rows="3"><?php echo $ro['remarks']; ?></textarea>
+    </div>
+
     
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>

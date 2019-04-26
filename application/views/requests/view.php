@@ -7,17 +7,17 @@
   <fieldset>
     
   <div class="form-group">
-      <label for="supplier_name">ID</label>
+      <label for="req_id">ID</label>
       <input type="text" class="form-control" id="req_id" aria-describedby="text" placeholder="Request ID" value = "<?php echo $request['req_id']; ?>">
       
     </div>
     <div class="form-group">
-      <label for="contact_person">Date</label>
+      <label for="req_date">Date</label>
       <input type="text" class="form-control" id="req_date" aria-describedby="text" placeholder="Date" value = "<?php echo $request['req_date']; ?>">
       
     </div>
     <div class="form-group">
-      <label for="contact_person">Department</label>
+      <label for="dept_id">Department</label>
       <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department" value = "<?php echo $request['dept_id']; ?>">
       
     </div>

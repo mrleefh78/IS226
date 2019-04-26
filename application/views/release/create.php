@@ -7,7 +7,7 @@ echo form_open('release/create', $entries); ?>
   <fieldset>
     
   <div class="form-group">
-      <label for="req_date">Request Date</label>
+      <label for="req_date">Release Date</label>
       <input type="text" class="form-control" id="req_date" name="req_date" aria-describedby="text" value =<?php echo date('Y-m-d'); ?> placeholder="Request Date">
       
     </div>
@@ -26,7 +26,7 @@ echo form_open('release/create', $entries); ?>
     
 
     <div class="form-group">
-      <label for="req_by">Requested By</label>
+      <label for="req_by">Release By</label>
       <input type="text" class="form-control" id="contact_no" name="req_by" aria-describedby="text" placeholder="Requested By">
       
     </div>

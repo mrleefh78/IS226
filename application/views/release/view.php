@@ -1,4 +1,4 @@
-<h2><?php echo $release['req_id']; ?></h2>
+<h2><?php echo $release['release_id']; ?></h2>
 
 
 <div class="col-md-2"></div>
@@ -7,7 +7,12 @@
   <fieldset>
     
   <div class="form-group">
-      <label for="supplier_name">ID</label>
+      <label for="release_id">ID</label>
+      <input type="text" class="form-control" id="release_id" aria-describedby="text" placeholder="Request ID" value = "<?php echo $release['req_id']; ?>">
+      
+    </div>
+    <div class="form-group">
+      <label for="release_id">Req ID</label>
       <input type="text" class="form-control" id="req_id" aria-describedby="text" placeholder="Request ID" value = "<?php echo $release['req_id']; ?>">
       
     </div>

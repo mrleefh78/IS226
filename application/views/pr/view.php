@@ -8,36 +8,56 @@
     
   <div class="form-group">
       <label for="supplier_name">ID</label>
-      <input type="text" class="form-control" id="release_id" aria-describedby="text" placeholder="Request ID" value = "<?php echo $request['req_id']; ?>">
-      
-    </div>
-    <div class="form-group">
-      <label for="contact_person">Date</label>
-      <input type="text" class="form-control" id="req_id" aria-describedby="text" placeholder="Date" value = "<?php echo $request['req_date']; ?>">
-      
-    </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <textarea class="form-control" id="address" rows="3" ><?php echo $request['address']; ?></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="contact_no">Contact no</label>
-      <input type="text" class="form-control" id="contact_no" aria-describedby="text" placeholder="Contact No" value = "<?php echo $request['contact_no']; ?>">
+      <input type="text" class="form-control" id="pr_id" aria-describedby="text" placeholder="Request ID" value = "<?php echo $request['req_id']; ?>">
       
     </div>
    
+  <div class="form-group">
+      <label for="req_date">Request Date</label>
+      <input type="text" class="form-control" id="req_date" name="req_date" aria-describedby="text" placeholder="Request Date" value = "<?php echo $pr['req_date']; ?>">
+      
+    </div>
+
     <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value = "<?php echo $request['email']; ?>">
+      <label for="pr_no">PR No</label>
+      <input type="text" class="form-control" id="pr_no" name="pr_no" aria-describedby="text" placeholder="PR No" value = "<?php echo $pr['dept_id']; ?>">
       
     </div>
     <div class="form-group">
-      <label for="website">Website</label>
-      <input type="text" class="form-control" id="website" aria-describedby="text" placeholder="Website" value = "<?php echo $request['website']; ?>">
+      <label for="contact_person">Department</label>
+      <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department" value = "<?php echo $pr['dept_id']; ?>">
       
     </div>
-    
+
+    <div class="form-group">
+      <label for="location_id">Location</label>
+      <input type="text" class="form-control" id="location_id" name="location_id" aria-describedby="text" placeholder="Location" value = "<?php echo $pr['location_id']; ?>">
+      
+    </div>
+
+       
+    <div class="form-group">
+      <label for="email">Requested By</label>
+      <input type="text" class="form-control" id="req_by" name="req_by"  aria-describedby="req_by" placeholder="Requested By" value = "<?php echo $pr['req_by']; ?>">
+      
+    </div>
+
+    <div class="form-group">
+      <label for="email">Status</label>
+      <select id = "myList" class="form-control">
+               <option value = "Approved">Approved</option>
+               <option value = "Rejected">Rejected</option>
+             
+             </select>
+      <!-- <input type="text" class="form-control" id="status" name="status"  aria-describedby="status" placeholder="Status" value = "<?php echo $request['status']; ?>"> -->
+      
+    </div>
+  
+
+    <div class="form-group">
+      <label for="req_notes">Notes</label>
+      <textarea class="form-control" id="req_notes" name="req_notes"  rows="3"><?php echo $pr['req_notes']; ?></textarea>
+    </div> 
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
 </form>

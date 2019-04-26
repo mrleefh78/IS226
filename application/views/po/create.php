@@ -3,39 +3,29 @@
 <div class="col-md-8">
 <?php echo validation_errors(); ?>
 <?php $entries = array("name" => "createform");
-echo form_open('suppliers/create', $entries); ?>
+echo form_open('po/create', $entries); ?>
   <fieldset>
     
   <div class="form-group">
-      <label for="supplier_name">Supplier Name</label>
-      <input type="text" class="form-control" id="supplier_name" name="supplier_name" aria-describedby="text" placeholder="Supplier Name">
+      <label for="po_date">PO Date</label>
+      <input type="text" class="form-control" id="po_date" name="po_date" aria-describedby="text" value =<?php echo date('Y-m-d'); ?> placeholder="PO Date">
       
     </div>
     <div class="form-group">
-      <label for="contact_person">Contact Person</label>
-      <input type="text" class="form-control" id="contact_person" name="contact_person" aria-describedby="text" placeholder="Contact Person">
+      <label for="pr_id">PR No</label>
+      <input type="text" class="form-control" id="pr_id" name="pr_id" aria-describedby="text" placeholder="PR No">
+      
+    </div>
+    
+ 
+    <div class="form-group">
+      <label for="po_by">PO By</label>
+      <input type="text" class="form-control" id="po_by" name="po_by" aria-describedby="text" placeholder="PO By">
       
     </div>
     <div class="form-group">
-      <label for="address">Address</label>
-      <textarea class="form-control" id="address" name="address"  rows="3"></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="contact_no">Contact no</label>
-      <input type="text" class="form-control" id="contact_no" name="contact_no" aria-describedby="text" placeholder="Contact No">
-      
-    </div>
-   
-    <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp" placeholder="Enter email">
-      
-    </div>
-    <div class="form-group">
-      <label for="website">Website</label>
-      <input type="text" class="form-control" id="website" name="website" aria-describedby="text" placeholder="Website">
-      
+      <label for="remarks">Notes</label>
+      <textarea class="form-control" id="remarks" name="remarks"  rows="3"></textarea>
     </div>
     
     <button type="submit" class="btn btn-primary">Submit</button>

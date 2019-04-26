@@ -70,7 +70,7 @@
        
 
         public function edit($po_id = NULL){
-            $data['po'] =  $this->po_model->get_pr($po_id );
+            $data['po'] =  $this->po_model->get_po($po_id );
             if(empty($data['po'])){
                 show_404();
             }
@@ -89,6 +89,6 @@
 
         public function delete($id){
             $this->po_model->delete_po($id);
-            redirect('pr');
+            redirect('po');
         }
     }

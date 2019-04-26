@@ -12,7 +12,7 @@
       <th scope="col">Date</th>
        <th scope="col">Location</th>
       <th scope="col">Department</th>     
-      <th scope="col">Request By</th> 
+      <th scope="col">Release By</th> 
        <th scope="col">Status</th>
       <th scope="col">Approved By</th>
     </tr>
