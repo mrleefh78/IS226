@@ -28,7 +28,7 @@
       <td><?php echo $re['receive_id']; ?></td>
       <td><?php echo $re['receive_date']; ?></td>
        <td><?php echo $re['po_id']; ?></td>
-        <td><?php echo $re['supplier_id']; ?></td>        
+        <td><?php echo $re['supplier_name']; ?></td>        
       <td><?php echo $re['receive_by']; ?></td>
        <td><?php echo $re['remarks']; ?></td>
      

@@ -6,11 +6,11 @@
 
         public function get_receive($id = FALSE) {
             if ($id === FALSE){
-                $query =  $this->db->get('txn_receive');
+                $query =  $this->db->get('vwreceive');
                 return $query ->result_array();
             }
 
-            $query =  $this->db->get_where('txn_receive',array('receive_id' => $id));
+            $query =  $this->db->get_where('vwreceive',array('receive_id' => $id));
             return $query ->row_array();
         }
         
