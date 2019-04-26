@@ -4,7 +4,7 @@
         public function index(){
             
             $data['title'] = 'List of Departments';
-            $data['departments'] =  $this->Lookup_model->get_departments();
+            $data['departments'] =  $this->lookup_model->get_departments();
             $this->load->view('templates/header');
             $this->load->view('departments/index', $data);
             $this->load->view('templates/footer');
@@ -14,7 +14,7 @@
         public function view($department_id = NULL){
             
            
-            $data['department'] =  $this->Lookup_model->get_departments($department_id);
+            $data['department'] =  $this->lookup_model->get_departments($department_id);
             if(empty($data['department'])){
                 show_404();
             }
@@ -46,7 +46,7 @@
                 // $this->load->view('suppliers/success');
                 //redirect('suppliers');
 
-                if ($this->Lookup_model->create_department())
+                if ($this->lookup_model->create_department())
                     {                             
                         $this->session->set_flashdata('msg_success','Department added successfully!');
                                 
@@ -66,7 +66,7 @@
        
 
         public function edit($id = NULL){
-            $data['department'] =  $this->Lookup_model->get_departments($id);
+            $data['department'] =  $this->lookup_model->get_departments($id);
             if(empty($data['department'])){
                 show_404();
             }
@@ -79,12 +79,12 @@
         }
 
         public function update($id){
-            $this->Lookup_model->update_department($id);
+            $this->lookup_model->update_department($id);
             redirect('departments');
         }
 
         public function delete($id){
-            $this->Lookup_model->delete_department($id);
+            $this->lookup_model->delete_department($id);
             redirect('departments');
         }
 

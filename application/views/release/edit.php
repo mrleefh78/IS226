@@ -3,44 +3,54 @@
 <div class="col-md-8">
 <?php echo validation_errors(); ?>
 <?php $entries = array("name" => "updateform");
-echo form_open('suppliers/update', $entries); ?>
+echo form_open('release/update', $entries); ?>
   <fieldset>
 
-  <input type="hidden" class="form-control" id="supplier_id" name="supplier_id" aria-describedby="text" placeholder="Supplier Name" value = "<?php echo $supplier['supplier_id']; ?>">
+  <input type="hidden" class="form-control" id="req_id" name="req_id" aria-describedby="text" placeholder="ID" value = "<?php echo $release['release_id']; ?>">
     
   <div class="form-group">
-      <label for="supplier_name">Supplier Name</label>
-      <input type="text" class="form-control" id="supplier_name" name="supplier_name" aria-describedby="text" placeholder="Supplier Name" value = "<?php echo $supplier['supplier_name']; ?>">
+      <label for="req_date">Request Date</label>
+      <input type="text" class="form-control" id="req_date" name="req_date" aria-describedby="text" placeholder="Request Date" value = "<?php echo $release['req_date']; ?>">
       
     </div>
     <div class="form-group">
-      <label for="contact_person">Contact Person</label>
-      <input type="text" class="form-control" id="contact_person" name="contact_person" aria-describedby="text" placeholder="Contact Person" value = "<?php echo $supplier['contact_person']; ?>">
+      <label for="contact_person">Department</label>
+      <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department" value = "<?php echo $release['dept_id']; ?>">
       
-    </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <textarea class="form-control" id="address" name="address"  rows="3"><?php echo $supplier['address']; ?></textarea>
     </div>
 
     <div class="form-group">
-      <label for="contact_no">Contact no</label>
-      <input type="text" class="form-control" id="contact_no" name="contact_no" aria-describedby="text" placeholder="Contact No" value = "<?php echo $supplier['contact_no']; ?>">
+      <label for="location_id">Location</label>
+      <input type="text" class="form-control" id="location_id" name="location_id" aria-describedby="text" placeholder="Location" value = "<?php echo $release['location_id']; ?>">
       
     </div>
-   
+
+       
     <div class="form-group">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" name="email"  aria-describedby="emailHelp" placeholder="Enter email" value = "<?php echo $supplier['email']; ?>">
+      <label for="email">Requested By</label>
+      <input type="text" class="form-control" id="req_by" name="req_by"  aria-describedby="req_by" placeholder="Requested By" value = "<?php echo $release['req_by']; ?>">
       
     </div>
+
     <div class="form-group">
-      <label for="website">Website</label>
-      <input type="text" class="form-control" id="website" name="website" aria-describedby="text" placeholder="Website" value = "<?php echo $supplier['website']; ?>">
+      <label for="email">Status</label>
+      <select id = "myList" class="form-control">
+               <option value = "Approved">Approved</option>
+               <option value = "Rejected">Rejected</option>
+             
+             </select>
+      <!-- <input type="text" class="form-control" id="status" name="status"  aria-describedby="status" placeholder="Status" value = "<?php echo $release['status']; ?>"> -->
       
     </div>
+  
+
+    <div class="form-group">
+      <label for="req_notes">Notes</label>
+      <textarea class="form-control" id="req_notes" name="req_notes"  rows="3"><?php echo $request['req_notes']; ?></textarea>
+    </div>
+
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Update</button>
   </fieldset>
 </form>
 </div>

@@ -23,7 +23,7 @@
         
             if ($this->form_validation->run() === FALSE){               
 
-                 $this->load->view("pages/login.php");      
+                 $this->load->view("Pages/login.php");      
 
             }else{
 
@@ -33,11 +33,11 @@
   
                     if ($check)  
                     {  
-                         redirect ('pages/view/');
+                         redirect ('Pages/view/');
 
                     } else {  
                        
-                    redirect ('pages/checkLogin');
+                    redirect ('Pages/checkLogin');
                            
                     }
                 }
