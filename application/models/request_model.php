@@ -70,11 +70,25 @@
 
        public function get_request_items($req_id = FALSE) {
         if ($req_id === FALSE){
-            $query =  $this->db->get('txn_request_items');
+            $query =  $this->db->get('vwrequestitems');
+         
             return $query ->result_array();
         }
 
-        $query =  $this->db->get_where('txn_request_items',array('req_id' => $req_id));
+        
+        $query =  $this->db->get_where('vwrequestitems',array('req_id' => $req_id));
+        return $query ->result_array();
+    }
+
+    public function get_request_items_byid($req_id = FALSE) {
+        if ($req_id === FALSE){
+            $query =  $this->db->get('vwrequestitems');
+         
+            return $query ->result_array();
+        }
+
+        
+        $query =  $this->db->get_where('vwrequestitems',array('id' => $req_id));
         return $query ->row_array();
     }
     
