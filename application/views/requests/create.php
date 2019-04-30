@@ -10,7 +10,7 @@ echo form_open('requests/create', $entries); ?>
       <label for="req_date">Request Date</label>
       <input type="text" class="form-control" id="req_date" name="req_date" aria-describedby="text" value =<?php echo date('Y-m-d'); ?> placeholder="Request Date">
       
-    </div>
+      </div>
     <div class="form-group">
       <label for="department">Department</label>
       <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department">

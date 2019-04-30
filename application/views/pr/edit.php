@@ -57,7 +57,50 @@ echo form_open('pr/update', $entries); ?>
 
     
     <button type="submit" class="btn btn-primary">Update</button>
+    <button type="button" class="btn btn-primary btn-sm" data-title="Add" data-toggle="modal" data-target="#additem1" onclick="location.href='<?php echo base_url(); ?>pr/additem/<?php echo $pr['pr_id']; ?>';" >Add New Items</button>
   </fieldset>
 </form>
+
+
+<h2>List of Items</h2>
+<br>
+<div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th scope="col">ID</th>
+      <th scope="col">PR ID</th>
+       <th scope="col">Item</th>
+      <th scope="col">Quantity</th>     
+      <th scope="col">Unit of Measurement</th> 
+      
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach($pritems as $req) : ?>
+  <tr class="table-secondary">
+ 
+    <td style="width: 50px;"><p data-placement="top" data-toggle="tooltip" title="Edit" ><button class="btn btn-success btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="location.href='<?php echo base_url(); ?>pr/edititem/<?php echo ($req['id']); ?> ';"  ><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></button></p></td>
+    <?php echo form_open('pr/deleteitem/' .$req['id']) ?>
+    
+    <td style="width: 50px;"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button></p></td>
+    </form>
+      <td><?php echo $req['id']; ?></td>
+      <td><?php echo $req['pr_id']; ?></td>
+       <td><?php echo $req['item_name']; ?></td>
+        <td><?php echo $req['quantity']; ?></td>        
+      <td><?php echo $req['uom']; ?></td>
+              
+    </tr>
+    <?php endforeach; ?>
+   
+  </tbody>
+</table> 
+</div>
 </div>
 <div class="col-md-2"></div>
+
+
+

@@ -1,6 +1,6 @@
 <h2><?=$title?></h2>
 
-<div><button type="button" class="btn btn-primary btn-sm" data-title="Add" data-toggle="modal" data-target="#addrequest" onclick="location.href='<?php echo base_url(); ?>release/create';" >Create Request</button></div>    
+<div><button type="button" class="btn btn-primary btn-sm" data-title="Add" data-toggle="modal" data-target="#addrequest" onclick="location.href='<?php echo base_url(); ?>release/create';" >New Release</button></div>    
 <br>
 <div>
 <table class="table table-hover">

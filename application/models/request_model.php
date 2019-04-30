@@ -60,6 +60,23 @@
             return $this->db->update('txn_request',$data);
         }         
 
+        public function update_request_stat(){
+            $id = $this->input->post('req_id');
+
+            $data = array(
+               
+                'status' => $this->input->post('status'),
+                'updated_by' => 'test',
+                'updated_date' => date('Y-m-d H:i:s'),
+                'created_by' => 'test',
+                'created_date' => date('Y-m-d H:i:s')
+
+            );
+
+            $this->db->where('req_id', $id);
+            return $this->db->update('txn_request',$data);
+        }    
+
         public function delete_request($id){
             $this->db->where('req_id', $id);
             $this->db->delete('txn_request');
@@ -91,6 +108,17 @@
         $query =  $this->db->get_where('vwrequestitems',array('id' => $req_id));
         return $query ->row_array();
     }
+
+    public function get_itemlistDrop() { 
+        $result = $this->db-> select('item_id,item_name') -> get('lkpitem') -> result_array(); 
+ 
+        $items = array(); 
+        foreach($result as $r) { 
+            $items[$r['item_id']] = $r['item_name']; 
+        } 
+        $items[''] = 'Select Item Class'; 
+        return $items; 
+        } 
     
     public function create_request_item(){
         $data = array(

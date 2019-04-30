@@ -96,10 +96,20 @@
             redirect('requests');
         }
 
+        public function updaterequest($id){
+            $this->request_model->update_request_stat($id);
+
+
+            redirect('requests');
+        }
+        
+
+        
+
         public function additem($req_id = NULL){
             $data['title'] = 'Add Items';
             $data['req_id'] = $req_id;
-           
+            $data['items'] = $this->request_model->get_itemlistDrop(); 
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
             $this->form_validation->set_rules('item_id','item_id','required');
@@ -159,7 +169,7 @@
         }
 
         
-
+        
 
      
         public function delete($id){

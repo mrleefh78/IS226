@@ -32,16 +32,15 @@ echo form_open('requests/update', $entries); ?>
       
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="email">Status</label>
       <select id = "myList" class="form-control">
                <option value = "Approved">Approved</option>
                <option value = "Rejected">Rejected</option>
              
              </select>
-      <!-- <input type="text" class="form-control" id="status" name="status"  aria-describedby="status" placeholder="Status" value = "<?php echo $request['status']; ?>"> -->
       
-    </div>
+    </div> -->
   
 
     <div class="form-group">

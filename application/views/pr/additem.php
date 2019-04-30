@@ -3,11 +3,11 @@
 <div class="col-md-8">
 <?php echo validation_errors(); ?>
 <?php $itementries = array("name" => "createform");
-echo form_open('requests/additem', $itementries); ?>
+echo form_open('pr/additem', $itementries); ?>
   <fieldset>
   <div class="form-group">
-      <label for="req_id">Req ID</label>
-      <input type="text" class="form-control" id="req_id" name="req_id"  aria-describedby="req_id" placeholder="Request ID" value = <?=$req_id?>>
+      <label for="pr_id">PR ID</label>
+      <input type="text" class="form-control" id="pr_id" name="pr_id"  aria-describedby="pr_id" placeholder="PR ID" value = <?=$pr_id?>>
       
     </div>
   <div class="form-group">

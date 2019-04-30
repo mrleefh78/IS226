@@ -69,14 +69,25 @@
         
        //items
 
+       public function get_itemlistDrop() { 
+        $result = $this->db-> select('item_id,item_name') -> get('lkpitem') -> result_array(); 
+ 
+        $items = array(); 
+        foreach($result as $r) { 
+            $items[$r['item_id']] = $r['item_name']; 
+        } 
+        $items[''] = 'Select Item Class'; 
+        return $items; 
+        } 
+
        public function get_pr_items($pr_id = FALSE) {
-        if ($req_id === FALSE){
-            $query =  $this->db->get('txn_pr_items');
+        if ($pr_id === FALSE){
+            $query =  $this->db->get('vwpritems');
             return $query ->result_array();
         }
 
-        $query =  $this->db->get_where('txn_pr_items',array('pr_id' => $pr_id));
-        return $query ->row_array();
+        $query =  $this->db->get_where('vwpritems',array('pr_id' => $pr_id));
+        return $query ->result_array();
     }
     
     public function create_pr_item(){
