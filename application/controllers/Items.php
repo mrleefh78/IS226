@@ -130,7 +130,7 @@
             $data['title'] = 'Create Item Class';
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
-            $this->form_validation->set_rules('item_name','required');
+            $this->form_validation->set_rules('item_name','item_name','required');
             // $this->form_validation->set_rules('contact_person','contact_person','required');
 
             if( $this->form_validation->run()===FALSE){
@@ -212,7 +212,7 @@
             $data['title'] = 'Create Item Sub-Class';
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
-            $this->form_validation->set_rules('item_name','required');
+            $this->form_validation->set_rules('item_name','item_name','required');
             // $this->form_validation->set_rules('contact_person','contact_person','required');
 
             if( $this->form_validation->run()===FALSE){
