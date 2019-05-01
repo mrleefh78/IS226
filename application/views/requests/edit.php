@@ -15,14 +15,15 @@ echo form_open('requests/update', $entries); ?>
     </div>
     <div class="form-group">
       <label for="contact_person">Department</label>
-      <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department" value = "<?php echo $request['dept_id']; ?>">
-      
+      <!-- <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department" value = "<?php echo $request['dept_id']; ?>"> -->
+      <?php echo form_dropdown('dept_id', $dept, $request['dept_id'], 'class="form-control"');?> 
+     
     </div>
 
     <div class="form-group">
       <label for="location_id">Location</label>
-      <input type="text" class="form-control" id="location_id" name="location_id" aria-describedby="text" placeholder="Location" value = "<?php echo $request['location_id']; ?>">
-      
+      <!-- <input type="text" class="form-control" id="location_id" name="location_id" aria-describedby="text" placeholder="Location" value = "<?php echo $request['location_id']; ?>"> -->
+      <?php echo form_dropdown('location_id', $loc, $request['location_id'], 'class="form-control"');?> 
     </div>
 
        
