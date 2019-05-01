@@ -13,17 +13,18 @@ echo form_open('requests/create', $entries); ?>
       </div>
     <div class="form-group">
       <label for="department">Department</label>
-      <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department">
-      
+      <!-- <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department"> -->
+      <?php echo form_dropdown('dept_id', $dept, '', 'class="form-control"');?> 
     </div>
     
     <div class="form-group">
       <label for="location">Location</label>
-      <input type="text" class="form-control" id="location_id" name="location_id" aria-describedby="text" placeholder="Location">
-      
+      <!-- <input type="text" class="form-control" id="location_id" name="location_id" aria-describedby="text" placeholder="Location"> -->
+      <?php echo form_dropdown('location_id', $loc, '', 'class="form-control"');?> 
     </div>
     
-    
+    <input type="hidden" class="form-control" id="status" name="status" aria-describedby="text" placeholder="Status" value = "New">
+
 
     <div class="form-group">
       <label for="req_by">Requested By</label>

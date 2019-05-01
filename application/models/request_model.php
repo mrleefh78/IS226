@@ -15,6 +15,7 @@
         }
         
         public function create_request(){
+
             $data = array(
                
                 'req_date' => $this->input->post('req_date'),
@@ -116,9 +117,31 @@
         foreach($result as $r) { 
             $items[$r['item_id']] = $r['item_name']; 
         } 
-        $items[''] = 'Select Item Class'; 
+        $items[''] = 'Select Item'; 
         return $items; 
         } 
+
+        public function get_deptlistDrop() { 
+            $result = $this->db-> select('id,description') -> get('lkpdepartment') -> result_array(); 
+     
+            $items = array(); 
+            foreach($result as $r) { 
+                $items[$r['id']] = $r['description']; 
+            } 
+            $items[''] = 'Select Department'; 
+            return $items; 
+            } 
+
+            public function get_loclistDrop() { 
+                $result = $this->db-> select('id,description') -> get('lkplocation') -> result_array(); 
+         
+                $items = array(); 
+                foreach($result as $r) { 
+                    $items[$r['id']] = $r['description']; 
+                } 
+                $items[''] = 'Select location'; 
+                return $items; 
+                } 
     
     public function create_request_item(){
         $data = array(

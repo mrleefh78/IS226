@@ -32,7 +32,8 @@
         public function create(){
             
             $data['title'] = 'Create Requests';
-            
+            $data['dept'] = $this->request_model->get_deptlistDrop(); 
+            $data['loc'] = $this->request_model->get_loclistDrop(); 
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
             $this->form_validation->set_rules('req_date','req_date','required');
