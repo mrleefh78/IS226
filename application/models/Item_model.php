@@ -177,13 +177,27 @@
         }
 
         public function get_itemclassDrop() { 
-        $result = $this->db-> select('item_id,item_name') -> get('lkpitemclass') -> result_array(); 
+            $result = $this->db-> select('item_id,item_name') -> get('lkpitemclass') -> result_array(); 
  
-        $job_position = array(); 
-        foreach($result as $r) { 
-            $job_position[$r['item_id']] = $r['item_name']; 
+            $itemclass = array(); 
+            foreach($result as $r) { 
+                $itemclass[$r['item_id']] = $r['item_name']; 
+                } 
+            $itemclass[''] = 'Select Item Class'; 
+            return $itemclass; 
         } 
-        $job_position[''] = 'Select Item Class'; 
-        return $job_position; 
+
+        public function get_itemsubclassDrop() { 
+            $result = $this->db-> select('item_id,item_name') -> get('lkpitemsubclass') -> result_array(); 
+ 
+            $itemsub = array(); 
+            foreach($result as $r) { 
+                $itemsub[$r['item_id']] = $r['item_name']; 
+            } 
+            $itemsub[''] = 'Select Item Sub Class'; 
+            return $itemsub; 
         } 
+
+
+        
     }
