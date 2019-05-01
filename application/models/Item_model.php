@@ -30,11 +30,11 @@
         public function create_item(){
             $data = array(
                
-                'item_name' => $this->input->post('item_name'),
+                'item_name' => $this->input->post('item_name'),              
+                'uom' => $this->input->post('uom'),
+                'reorder_level' => $this->input->post('reorder'),
+                'price' => $this->input->post('price'),
                 'quantity' => $this->input->post('quantity'),
-                'uom' => $this->input->post('uom'),
-                'reorder_level' => $this->input->post('reorder_level'),
-                'uom' => $this->input->post('uom'),
                 'item_class_id' => $this->input->post('item_class'),
                 'item_sub_class_id' => $this->input->post('item_sub'),
                 'updated_by' => 'test',
@@ -54,6 +54,10 @@
             $data = array(
                
                 'item_name' => $this->input->post('item_name'),
+                'uom' => $this->input->post('uom'),
+                'reorder_level' => $this->input->post('reorder'),
+                'price' => $this->input->post('price'),
+                'quantity' => $this->input->post('quantity'),
                 'item_class_id' => $this->input->post('item_class'),
                 'item_sub_class_id' => $this->input->post('item_sub'),
                 'updated_by' => 'test',
@@ -175,7 +179,6 @@
             $this->db->delete('lkpitemsubclass');
             return true;
         }
-
         public function get_itemclassDrop() { 
             $result = $this->db-> select('item_id,item_name') -> get('lkpitemclass') -> result_array(); 
  
@@ -197,7 +200,29 @@
             $itemsub[''] = 'Select Item Sub Class'; 
             return $itemsub; 
         } 
+         public function get_itemclasseditDrop() { 
 
 
-        
+        $result = $this->db-> select('item_id,item_name') -> get('lkpitemclass')-> result_array(); 
+
+        $itemclass = array(); 
+        foreach($result as $r) { 
+            $itemclass[$r['item_id']] = $r['item_name']; 
+        } 
+        //$itemclass[''] = $item; 
+        return $itemclass; 
+        } 
+
+
+        public function get_itemsubclasseditDrop() { 
+        $result = $this->db-> select('item_id,item_name') -> get('lkpitemsubclass') -> result_array(); 
+       
+ 
+        $itemsub = array(); 
+        foreach($result as $r) { 
+            $itemsub[$r['item_id']] = $r['item_name']; 
+        } 
+        //$itemsub[''] = 'Select Item Sub Class'; 
+        return $itemsub; 
+        } 
     }
