@@ -8,6 +8,9 @@ class User_model extends CI_model{
             $this->load->database();
         }
         
+
+
+
     public function login_user(){
 
 
@@ -19,7 +22,15 @@ class User_model extends CI_model{
     }
 
 
+   public function cariTest($user_id = FALSE)
+    {
+        $search = $this->input->GET('search', TRUE);
+       $data = $this->db->query("SELECT * from users where first_name like '%$search%' ");
    
+       return $data->result();
+
+
+    }
 
         public function get_users($user_id = FALSE) {
             if ($user_id === FALSE){

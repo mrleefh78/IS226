@@ -1,10 +1,14 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
     class Items extends CI_Controller {
         function __construct() { 
         parent::__construct(); 
+
         }
+
+
         public function index(){
+     
 
         }
         public function item(){
@@ -21,6 +25,10 @@
             if(empty($data['item'])){
                 show_404();
             }
+
+            
+
+
             $data['title'] = $data['item']['item_id'];
 
             $this->load->view('templates/header');
@@ -31,8 +39,11 @@
         public function create(){
             
             //$data['title'] = 'Create Inventory Items';
-        $data['job_positions'] = $this->item_model->get_itemclassDrop(); 
-            $this->form_validation->set_rules('item_name','item_name','required');          
+        $data['itemclass'] = $this->item_model->get_itemclassDrop(); 
+        $data['itemsub'] = $this->item_model->get_itemsubclassDrop(); 
+            $this->form_validation->set_rules('item_name','item_class','required');          
+
+        
 
             if( $this->form_validation->run()===FALSE){
                 $this->load->view('templates/header');
@@ -63,9 +74,14 @@
             if(empty($data['item'])){
                 show_404();
             }
-            // $data['title'] = $data['supplier']['supplier_id'];
-            $data['title'] = 'Update Inventory Items';
 
+            
+       // $data['title'] = $data['item']['item_id'];
+        $data['title'] = 'Update Inventory Items';
+
+        $data['itemclass'] = $this->item_model->get_itemclasseditDrop(); 
+        $data['itemsub'] = $this->item_model->get_itemsubclasseditDrop(); 
+        
             $this->load->view('templates/header');
             $this->load->view('items/edit', $data);
             $this->load->view('templates/footer');
@@ -114,7 +130,7 @@
             $data['title'] = 'Create Item Class';
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
-            $this->form_validation->set_rules('item_name','item_name','required');
+            $this->form_validation->set_rules('item_name','required');
             // $this->form_validation->set_rules('contact_person','contact_person','required');
 
             if( $this->form_validation->run()===FALSE){
@@ -196,7 +212,7 @@
             $data['title'] = 'Create Item Sub-Class';
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
-            $this->form_validation->set_rules('item_name','item_name','required');
+            $this->form_validation->set_rules('item_name','required');
             // $this->form_validation->set_rules('contact_person','contact_person','required');
 
             if( $this->form_validation->run()===FALSE){
