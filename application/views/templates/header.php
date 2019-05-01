@@ -71,7 +71,9 @@
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/register_view">Users</a>
                     </div>
                 </li>
-                
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url(); ?>pages/user_search">User Search</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
                 </li>

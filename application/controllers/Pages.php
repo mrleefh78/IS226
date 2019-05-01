@@ -3,6 +3,11 @@
     class Pages extends CI_Controller {
 
        
+        public function __construct()
+    {
+        parent::__construct();
+      
+    }
         public function index(){
 
            // $this->load->view('templates/header_login');
@@ -12,7 +17,25 @@
 
        
 
-        
+         public function user_search()
+    {
+
+        $data['title'] = 'Search Users';
+         $data['users'] =  $this->user_model->get_users();    
+        $this->load->view('templates/header');    
+        $this->load->view('pages/register_view', $data);
+        $this->load->view('templates/footer');
+            }
+
+         public function search($user_id = NULL)
+    {
+        $data2['cari'] = $this->user_model->cariTest($user_id);
+      
+            $this->load->view('templates/header');
+            $this->load->view('pages/result', $data2);   
+            $this->load->view('templates/footer');
+        }
+
         
         public function checkLogin(){
        
