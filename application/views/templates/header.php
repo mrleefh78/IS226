@@ -72,9 +72,19 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/changepass">Change Password</a>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url(); ?>pages/user_search">User Search</a>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"  href="#" role="button" aria-haspopup="true" aria-expanded="false">Inquiry</a>
+                    <div class="dropdown-menu" >
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>items/item">Inventory Items</a>
+                       
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>suppliers">Suppliers</a>
+
+                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/user_search">User Search</a>
+              
+                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
