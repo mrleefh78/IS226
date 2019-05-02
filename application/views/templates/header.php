@@ -69,6 +69,8 @@
 
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/register_view">Users</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/changepass">Change Password</a>
                     </div>
                 </li>
                 <li class="nav-item">

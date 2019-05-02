@@ -56,7 +56,25 @@
   
                     if ($check)  
                     {  
-                         redirect ('Pages/view/');
+                          $where = array(
+                            'user_email' => $this->input->post('email'), 
+                            'user_password' => md5($this->input->post('password')), 
+                          );
+
+                        $result = $this->user_model->login_user1($where);
+                        if($result > 0 AND is_object($result)){
+                          // User login 
+                          $session_data = array(
+                            'EMAIL'       => $where['user_email'],
+                            'USER_ID'     => $result->user_id,
+                            'FULL_NAME'   => $result->user_name,
+                           
+                          );
+                          $this->session->set_userdata($session_data);
+                          //return redirect('Admin');
+                            redirect ('Pages/view/');
+
+                            }
 
                     } else {  
                        
@@ -66,6 +84,47 @@
                 }
 
         }
+
+        
+        public function changePass(){
+
+        $this->form_validation->set_rules('old_pass', 'Old Password', 'trim|required|max_length[150]');
+        $this->form_validation->set_rules('new_pass', 'New Password', 'trim|required|max_length[150]');
+        $this->form_validation->set_rules('rep_new_pass', 'Repeat Password', 'trim|required|max_length[150]|matches[new_pass]');
+
+        if($this->form_validation->run() == false){
+
+            $data['title'] = "Change Password";
+          
+             $this->load->view('templates/header');
+            $this->load->view('pages/change_password', $data);   
+            $this->load->view('templates/footer');
+        }else{
+
+            // Update Data
+            $data = array(
+                'user_password' => md5($this->input->post('new_pass')),
+                'updated_date' => date('Y-m-d H:i:s')
+            );
+            // Check Old {Password}
+            $result = $this->user_model->Check_Old_Password($this->session->userdata('USER_ID'), md5($this->input->post('old_pass')));
+            if($result > 0 AND $result === true ){
+                // updata user data
+                $result = $this->user_model->Update_User_Data($this->session->userdata('USER_ID'), $data);
+                if($result > 0){
+                    $this->session->set_flashdata('success_msg', 'User Password Change.');
+                    return redirect('pages/ChangePass');
+                }else{
+                    $this->session->set_flashdata('error_msg', '<b>Error: </b>User Password not Change.');
+                    return redirect('pages/ChangePass');
+                }
+            }else{
+                $this->session->set_flashdata('error_msg', '<b>Error: </b>User Old Password not Match.');
+                return redirect('pages/ChangePass');
+            }
+        }
+        
+    }
 
         public function register_view(){
             $data['title'] = 'List of Users';
