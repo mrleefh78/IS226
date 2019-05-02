@@ -4,7 +4,7 @@
         public function index(){
             
             $data['title'] = 'List of Locations';
-            $data['locations'] =  $this->Lookup_model->get_locations();
+            $data['locations'] =  $this->lookup_model->get_locations();
             $this->load->view('templates/header');
             $this->load->view('locations/index', $data);
             $this->load->view('templates/footer');
@@ -14,7 +14,7 @@
         public function view($loc_id = NULL){
             
            
-            $data['supplier'] =  $this->Lookup_model->get_locations($loc_id);
+            $data['supplier'] =  $this->lookup_model->get_locations($loc_id);
             if(empty($data['supplier'])){
                 show_404();
             }
