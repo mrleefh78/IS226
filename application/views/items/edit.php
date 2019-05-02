@@ -55,7 +55,11 @@ echo form_open('items/update', $entries); ?>
       <input type="text" class="form-control" id="price" name="price" aria-describedby="text" placeholder="Price" size="15"value = "<?php echo $item['price']; ?>">
          </div>
    
-    
+    <div class="form-group">
+      <label for="price">Status</label>
+      <input type="text" class="form-control" id="status" name="status" aria-describedby="text" placeholder="Price" size="15"value = "<?php echo $item['status']; ?>">
+         </div>
+   
     
     <button type="submit" class="btn btn-primary">Submit</button>
   </fieldset>
