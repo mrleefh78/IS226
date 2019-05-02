@@ -87,8 +87,8 @@
             redirect('suppliers');
         }
 
-        public function delete($id){
-            $this->supplier_model->delete_supplier($id);
-            redirect('suppliers');
-        }
+        //public function delete($id){
+         //   $this->supplier_model->delete_supplier($id);
+         //   redirect('suppliers');
+        //}
     }

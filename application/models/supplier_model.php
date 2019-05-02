@@ -56,11 +56,11 @@
             return $this->db->update('lkpsuppliers',$data);
         }         
 
-        public function delete_supplier($id){
-            $this->db->where('supplier_id', $id);
-            $this->db->delete('lkpsuppliers');
-            return true;
-        }
+       // public function delete_supplier($id){
+        //    $this->db->where('supplier_id', $id);
+        //    $this->db->delete('lkpsuppliers');
+       //     return true;
+       // }
         
 
         // location model
