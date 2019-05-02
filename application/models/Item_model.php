@@ -200,29 +200,35 @@
             $itemsub[''] = 'Select Item Sub Class'; 
             return $itemsub; 
         } 
-         public function get_itemclasseditDrop() { 
+         public function get_itemclasseditDrop($item_id) { 
 
 
-        $result = $this->db-> select('item_id,item_name') -> get('lkpitemclass')-> result_array(); 
+           if ($item_id === FALSE){
+                    $query =  $this->db->get('lkpitem');
+                    return $query ->result_array();
+                }
+                $query = $this->db-> select('item_id, Generic') ->get_where('vwitems',array('item_id' => $item_id)) -> result_array(); 
+                 $itemclass = array();
+                foreach( $query as $r) { 
+                $itemclass[$r['item_id']] = $r['Generic']; 
+                } 
+               
+                return $itemclass ;
+            }
 
-        $itemclass = array(); 
-        foreach($result as $r) { 
-            $itemclass[$r['item_id']] = $r['item_name']; 
-        } 
-        //$itemclass[''] = $item; 
-        return $itemclass; 
-        } 
 
+        public function get_itemsubclasseditDrop($item_id) { 
+            if ($item_id === FALSE){
+                    $query =  $this->db->get('lkpitem');
+                    return $query ->result_array();
+                }
+                $query = $this->db-> select('item_id, Category') ->get_where('vwitems',array('item_id' => $item_id)) -> result_array(); 
+                 $itemsub = array();
+                foreach( $query as $r) { 
+                $itemsub[$r['item_id']] = $r['Category']; 
+                } 
+               
+                return $itemsub ;
+            }
 
-        public function get_itemsubclasseditDrop() { 
-        $result = $this->db-> select('item_id,item_name') -> get('lkpitemsubclass') -> result_array(); 
-       
- 
-        $itemsub = array(); 
-        foreach($result as $r) { 
-            $itemsub[$r['item_id']] = $r['item_name']; 
-        } 
-        //$itemsub[''] = 'Select Item Sub Class'; 
-        return $itemsub; 
-        } 
     }

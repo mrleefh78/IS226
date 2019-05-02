@@ -79,8 +79,8 @@
        // $data['title'] = $data['item']['item_id'];
         $data['title'] = 'Update Inventory Items';
 
-        $data['itemclass'] = $this->item_model->get_itemclasseditDrop(); 
-        $data['itemsub'] = $this->item_model->get_itemsubclasseditDrop(); 
+        $data['itemclass'] = $this->item_model->get_itemclasseditDrop($item_id); 
+        $data['itemsub'] = $this->item_model->get_itemsubclasseditDrop($item_id);  
         
             $this->load->view('templates/header');
             $this->load->view('items/edit', $data);
