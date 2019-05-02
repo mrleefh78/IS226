@@ -67,6 +67,26 @@ class User_model extends CI_model{
             return false;
     }
 
+     public function update_reset_key($reset_key){
+            $email=$this->input->post('email');
+            $this->db->where('user_email', $email);
+
+            //$data=array('reset_password_key'=>$reset_key);
+            $data=array('last_name'=>$reset_key);
+            $this->db->update('users', $data);
+
+            if ($this->db->affected_rows()>0)
+            {
+
+                return TRUE;
+            }
+            else
+            {
+                return FALSE;
+            }
+
+
+        }
 
 
 

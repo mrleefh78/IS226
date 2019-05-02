@@ -1,4 +1,3 @@
-
 <!DOCTYPE>
 <html>
 <head>
@@ -163,24 +162,26 @@ input[type=submit]:active {
 
             
         </nav>
-    <!-- Begin Page Content -->
-    <div id="container">
-        <form role="form" method="post" action="<?php echo base_url('pages/checkLogin'); ?>">
-           
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email">
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-                <div id="lower">
-                    <input type="submit" value="Sign in" name="login" >
-                    <a href="<?php echo base_url(); ?>pages/reset_password_email">Forgot Password?</a>
-                    <a href="<?php echo base_url('pages/register_view'); ?>">-</a>
-                </div>
-        </form>
-           
-            
-    </div><!--/ container-->
-    <!-- End Page Content -->
+
+		 <div class="row">
+		
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+
+	<?php 
+	echo validation_errors();
+	echo form_open ('pages/email_reset_password_validation');
+	echo form_input ('email', $this->input->post('email'));
+	echo form_submit ('submit', 'Submit');
+	echo form_close();
+	?>
+
+</div>
+
+
+
+
+
+
 </body>
 </html>

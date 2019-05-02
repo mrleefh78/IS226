@@ -126,6 +126,42 @@
         
     }
 
+
+        public function reset_password_email(){
+
+             $this->load->view('pages/reset_password_email');
+
+        }
+
+
+        public function email_reset_password_validation(){
+
+           $this->form_validation->set_rules('email', 'Email','required|valid_email');
+
+              if ($this->form_validation->run() === TRUE){               
+
+                $reset_key = md5(uniqid());
+                $this->load->model('user_model');   
+               if ($this->user_model->update_reset_key($reset_key))
+               {
+
+                echo "send email later";
+               }
+               else
+               {
+                echo "Error";
+               }
+
+            } else
+               {
+
+               
+                $this->load->view('pages/reset_password_email');
+           }
+
+         }
+
+
         public function register_view(){
             $data['title'] = 'List of Users';
            
