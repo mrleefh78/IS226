@@ -79,7 +79,7 @@
                        
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>suppliers">Suppliers</a>
+                        <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>suppliers">Suppliers Search</a>
 
                          <div class="dropdown-divider"></div>
                         <a class="dropdown-item" style="font-size:14px" href="<?php echo base_url(); ?>pages/user_search">User Search</a>
