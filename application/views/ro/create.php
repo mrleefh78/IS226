@@ -12,15 +12,38 @@ echo form_open('ro/create', $entries); ?>
       
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="po_id">PO No</label>
       <input type="text" class="form-control" id="po_no" name="po_id" aria-describedby="text" placeholder="PO No">
       
+    </div> -->
+
+    <div class="form-group">
+      <label for="contact_person">PO Reference</label>
+      <?php echo form_dropdown('po_id', $ref, '', 'class="form-control"');?> 
+      <button class="btn btn-success btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="window.open('<?php echo base_url(); ?>po/edit/<?php echo '4' ?> ')"  ><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></button>
     </div>
           
     <div class="form-group">
-      <label for="email">Supplier</label>
-      <input type="text" class="form-control" id="supplier_id" name="supplier_id"  aria-describedby="supplier_id" placeholder="Supplier">
+      <label for="contact_person">Supplier</label>
+      <?php echo form_dropdown('supplier_id', $supp, '', 'class="form-control"');?> 
+    
+    </div>
+    <!-- <div class="form-group">
+      <label for="pr_id">PR No</label>
+      <input type="text" class="form-control" id="pr_id" name="pr_id" aria-describedby="text" placeholder="PR No">
+      
+    </div> -->
+    
+    <div class="form-group">
+      <label for="email">Status</label>
+      <select id = "myList" class="form-control" name="status">
+               <option value = "Approved">Received</option>
+               <option value = "Approved">Cancelled</option>
+               <option value = "Rejected">Rejected</option>
+             
+             </select>
+      <!-- <input type="text" class="form-control" id="status" name="status"  aria-describedby="status" placeholder="Status" value = "<?php echo $release['status']; ?>"> -->
       
     </div>
 

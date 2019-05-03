@@ -10,11 +10,13 @@
       <th></th>
       <th scope="col">Request ID</th>
       <th scope="col">Date</th>
+      <th scope="col">PR No</th>
        <th scope="col">Location</th>
       <th scope="col">Department</th>     
       <th scope="col">Request By</th> 
        <th scope="col">Status</th>
-      <th scope="col">Approved By</th>
+       
+    
     </tr>
   </thead>
   <tbody>
@@ -28,12 +30,11 @@
     </form>
       <td><?php echo $req['pr_id']; ?></td>
       <td><?php echo $req['req_date']; ?></td>
+      <td><?php echo $req['req_no']; ?></td>
        <td><?php echo $req['location']; ?></td>
         <td><?php echo $req['department']; ?></td>        
       <td><?php echo $req['req_by']; ?></td>
-       <td><?php echo $req['req_no']; ?></td>
-       <td><?php echo $req['authorize_by']; ?></td>
-     
+       <td><?php echo $req['status']; ?></td>
      
      
      

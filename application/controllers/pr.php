@@ -31,6 +31,8 @@
         public function create(){
             
             $data['title'] = 'Create Purchase Request';
+            $data['dept'] = $this->request_model->get_deptlistDrop(); 
+            $data['loc'] = $this->request_model->get_loclistDrop(); 
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
             $this->form_validation->set_rules('req_date','req_date','required');
@@ -72,6 +74,8 @@
         public function edit($pr_id = NULL){
             $data['pr'] =  $this->pr_model->get_pr($pr_id );
             $data['pritems'] =  $this->pr_model->get_pr_items($pr_id);
+            $data['dept'] = $this->request_model->get_deptlistDrop(); 
+            $data['loc'] = $this->request_model->get_loclistDrop(); 
             if(empty($data['pr'])){
                 show_404();
             }

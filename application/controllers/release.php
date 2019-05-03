@@ -57,10 +57,15 @@
                     {           
                        if ($this->release_model->update_req_entry())
                        {
+
+                        if ($this->release_model->update_inv_items())
+                        {
                            
+                        }
+
                        }
 
-                        $this->session->set_flashdata('msg_success','Release successfully!');
+                       $this->session->set_flashdata('msg_success','Release successfully!');
                                 
                     }
                     else
@@ -80,6 +85,7 @@
         public function edit($req_id = NULL){
             $data['release'] =  $this->release_model->get_data($req_id );
             $data['ref'] = $this->release_model->get_reqlistDrop(); 
+            $data['requestitems'] =  $this->request_model->get_request_items($req_id);
             if(empty($data['release'])){
                 show_404();
             }

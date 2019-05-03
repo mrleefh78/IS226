@@ -3,7 +3,7 @@
     class Po extends CI_Controller {
         public function index(){
             
-            $data['title'] = 'List of PR';
+            $data['title'] = 'List of Purchase Orders';
             $data['po'] =  $this->po_model->get_po();
             $this->load->view('templates/header');
             $this->load->view('po/index', $data);
@@ -31,6 +31,8 @@
         public function create(){
             
             $data['title'] = 'Create Purchase Order';
+            $data['ref'] = $this->po_model->get_reqlistDrop(); 
+            $data['supp'] = $this->po_model->get_supplistDrop(); 
 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
             $this->form_validation->set_rules('po_date','po_date','required');
@@ -51,7 +53,10 @@
                 //redirect('suppliers');
 
                 if ($this->po_model->create_po())
-                    {                             
+                    {  
+                        if ($this->po_model->update_req_entry())
+                        {
+                        }                           
                         $this->session->set_flashdata('msg_success','PO added successfully!');
                                 
                     }
@@ -71,6 +76,8 @@
 
         public function edit($po_id = NULL){
             $data['po'] =  $this->po_model->get_po($po_id );
+            $data['ref'] = $this->po_model->get_reqlistDropEdit(); 
+            $data['supp'] = $this->po_model->get_supplistDrop(); 
             if(empty($data['po'])){
                 show_404();
             }

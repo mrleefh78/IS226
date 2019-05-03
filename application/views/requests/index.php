@@ -14,7 +14,7 @@
       <th scope="col">Department</th>     
       <th scope="col">Request By</th> 
        <th scope="col">Status</th>
-      <th scope="col">Approved By</th>
+    
     </tr>
   </thead>
   <tbody>
@@ -32,7 +32,7 @@
         <td><?php echo $req['department']; ?></td>        
       <td><?php echo $req['req_by']; ?></td>
        <td><?php echo $req['status']; ?></td>
-       <td><?php echo $req['authorize_by']; ?></td>
+      
           
     </tr>
     <?php endforeach; ?>

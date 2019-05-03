@@ -10,7 +10,7 @@
       <th></th>
       <th scope="col">Receive ID</th>
       <th scope="col">Date</th>
-       <th scope="col">PO No</th>
+       <th scope="col">PO Ref No</th>
       <th scope="col">Supplier</th>     
       <th scope="col">Receive By</th> 
       <th scope="col">Remarks</th>
@@ -27,7 +27,7 @@
     </form>
       <td><?php echo $re['receive_id']; ?></td>
       <td><?php echo $re['receive_date']; ?></td>
-       <td><?php echo $re['po_id']; ?></td>
+       <td><?php echo $re['pr_ref']; ?></td>
         <td><?php echo $re['supplier_name']; ?></td>        
       <td><?php echo $re['receive_by']; ?></td>
        <td><?php echo $re['remarks']; ?></td>

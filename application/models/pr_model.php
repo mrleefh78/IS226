@@ -25,7 +25,7 @@
                 'req_notes' => $this->input->post('req_notes'),
                 'authorize_by' => $this->input->post('authorize_by'),
                 'remarks' => $this->input->post('remarks'),
-                // 'status' => $this->input->post('status'),
+                 'status' => $this->input->post('status'),
                 'updated_by' => 'test',
                 'updated_date' => date('Y-m-d H:i:s'),
                 'created_by' => 'test',
@@ -139,5 +139,28 @@
         $this->db->delete('txn_pr_items');
         return true;
     }
+
+    public function get_deptlistDrop() { 
+        $result = $this->db-> select('id,description') -> get('lkpdepartment') -> result_array(); 
+ 
+        $items = array(); 
+        foreach($result as $r) { 
+            $items[$r['id']] = $r['description']; 
+        } 
+        $items[''] = 'Select Department'; 
+        return $items; 
+        } 
+
+        public function get_loclistDrop() { 
+            $result = $this->db-> select('id,description') -> get('lkplocation') -> result_array(); 
+     
+            $items = array(); 
+            foreach($result as $r) { 
+                $items[$r['id']] = $r['description']; 
+            } 
+            $items[''] = 'Select location'; 
+            return $items; 
+            } 
+
         
     }

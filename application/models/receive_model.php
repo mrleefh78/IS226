@@ -122,5 +122,30 @@
         $this->db->delete('txn_receive_items');
         return true;
     }
+
+    public function get_reqlistDrop() { 
+        // $result = $this->db-> select('req_id, Concat(req_id, "-", req_by, "-", DATE_FORMAT(req_date, "%Y-%m-%d")) as description ') -> get('vwrequest') -> result_array(); 
+         $result = $this->db-> select('po_id, pr_ref as description ') -> get_where('vwpo',array('status =' => 'Approved'))-> result_array(); 
+  
+         $items = array(); 
+         foreach($result as $r) { 
+             $items[$r['po_id']] = $r['description']; 
+         } 
+         $items[''] = 'Select PR Reference'; 
+         return $items; 
+         } 
+
+         public function update_inv_items(){
+          
+            //  $id = $this->input->post('req_id');
+          //  $data = ' lkpitem B inner join  txn_request_items A on A.item_id = B.item_id set B.quantity = B.quantity -A.quantity where A.req_id = ?';
+  
+            //   $this->db->where('req_id', $this->input->post('req_id'));
+
+             // $sql = "UPDATE table SET column = ? WHERE id = ?";
+//$this->db->query($sql, array($value, $id));
+
+              return $this->db->query('update lkpitem B inner join  txn_pr_items A on A.item_id = B.item_id inner join txn_po A2 on A.pr_id = A2.pr_id set B.quantity = B.quantity + A.quantity where A2.po_id = ?', $this->input->post('po_id'));
+          }   
         
     }

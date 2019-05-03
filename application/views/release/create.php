@@ -15,7 +15,7 @@ echo form_open('release/create', $entries); ?>
     <div class="form-group">
       <label for="contact_person">Request Reference</label>
       <?php echo form_dropdown('req_id', $ref, '', 'class="form-control"');?> 
-     
+      <button class="btn btn-success btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="window.open('<?php echo base_url(); ?>requests/edit/<?php echo '6' ?> ')"  ><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></button>
     </div>
     <!-- <div class="form-group">
       <label for="department">Department</label>
@@ -33,6 +33,7 @@ echo form_open('release/create', $entries); ?>
       <label for="email">Status</label>
       <select id = "myList" class="form-control" name="status">
                <option value = "Approved">Approved</option>
+               <option value = "Approved">Pending</option>
                <option value = "Rejected">Rejected</option>
              
              </select>

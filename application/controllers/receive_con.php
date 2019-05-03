@@ -31,7 +31,7 @@
         public function create(){
             
             $data['title'] = 'Create Receive Order';
-
+            
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
             $this->form_validation->set_rules('receive_date','receive_date','required');
             // $this->form_validation->set_rules('req_no','req_no','required');

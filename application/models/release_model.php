@@ -97,6 +97,21 @@
             return $this->db->update('txn_request',$data);
         }    
 
+
+        public function update_inv_items(){
+          
+            //  $id = $this->input->post('req_id');
+          //  $data = ' lkpitem B inner join  txn_request_items A on A.item_id = B.item_id set B.quantity = B.quantity -A.quantity where A.req_id = ?';
+  
+            //   $this->db->where('req_id', $this->input->post('req_id'));
+
+             // $sql = "UPDATE table SET column = ? WHERE id = ?";
+//$this->db->query($sql, array($value, $id));
+
+              return $this->db->query('update lkpitem B inner join  txn_request_items A on A.item_id = B.item_id set B.quantity = B.quantity - A.quantity where  A.req_id = ?', $this->input->post('req_id'));
+          }    
+  
+
         public function delete_entry($id){
             $this->db->where('release_id', $id);
             $this->db->delete('txn_release');

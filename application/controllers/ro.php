@@ -31,7 +31,8 @@
         public function create(){
             
             $data['title'] = 'Create Receive Order';
-
+            $data['ref'] = $this->receive_model->get_reqlistDrop(); 
+            $data['supp'] = $this->po_model->get_supplistDrop(); 
             //$data['suppliers'] =  $this->supplier_model->get_suppliers();
             $this->form_validation->set_rules('receive_date','receive_date','required');
             // $this->form_validation->set_rules('req_no','req_no','required');
@@ -51,7 +52,11 @@
                 //redirect('suppliers');
 
                 if ($this->receive_model->create_receive())
-                    {                             
+                    {      
+                        if ($this->receive_model->update_inv_items())
+                        {
+                           
+                        }                       
                         $this->session->set_flashdata('msg_success','Receive added successfully!');
                                 
                     }

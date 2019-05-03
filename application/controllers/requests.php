@@ -162,9 +162,9 @@
                    $data['req_id'] = $this->uri->segment(3); 
 
 
-                redirect('requests/edit/' .   $data['req_id']);
+                // redirect('requests/edit/' .   $data['req_id']);
                 //redirect('requests/get_permission/');
-                //redirect($id);
+                redirect('requests');
                // $this->load->view('requests/edit', $req_id);
 
             }           
@@ -174,7 +174,7 @@
 
         public function edititem($req_id = NULL){
             $data['request'] =  $this->request_model->get_request_items_byid($req_id);
-           // $data['requestitems'] =  $this->request_model->get_request_items($req_id);
+            $data['items'] = $this->request_model->get_itemlistDrop(); 
             if(empty($data['request'])){
                 show_404();
             }
@@ -185,13 +185,17 @@
 
             $this->load->view('templates/header');
             $this->load->view('requests/edititem', $data);
+            $this->load->view('templates/footer');
            // $this->load->view('requestitems/view', $itemdata);
            //viewitems($req_id);
-            $this->load->view('templates/footer');
+           //redirect('requests');
         }
 
         
-        
+        public function updateitem($id){
+            $this->request_model->update_request_item($id);
+            redirect('requests');
+        }
 
      
         public function delete($id){

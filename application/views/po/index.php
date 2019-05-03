@@ -9,10 +9,11 @@
       <th></th>
       <th></th>
       <th scope="col">PO ID</th>
-      <th scope="col">Request ID</th>
+      <th scope="col">PR Reference</th>
       <th scope="col">Date</th>
       <th scope="col">PO By</th> 
-      <th scope="col">Remarks</th>
+      <th scope="col">Status</th>
+      <th scope="col">Supplier</th>
     </tr>
   </thead>
   <tbody>
@@ -25,10 +26,11 @@
     <td style="width: 50px;"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button></p></td>
     </form>
       <td><?php echo $popr['po_id']; ?></td>
-      <td><?php echo $popr['pr_id']; ?></td>
+      <td><?php echo $popr['pr_ref']; ?></td>
       <td><?php echo $popr['po_date']; ?></td>
       <td><?php echo $popr['po_by']; ?></td>
-       <td><?php echo $popr['remarks']; ?></td>
+      <td><?php echo $popr['status']; ?></td>
+       <td><?php echo $popr['supplier_name']; ?></td>
      
      
      

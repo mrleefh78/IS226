@@ -6,11 +6,11 @@
 
         public function get_po($id = FALSE) {
             if ($id === FALSE){
-                $query =  $this->db->get('txn_po');
+                $query =  $this->db->get('vwpo');
                 return $query ->result_array();
             }
 
-            $query =  $this->db->get_where('txn_po',array('po_id' => $id));
+            $query =  $this->db->get_where('vwpo',array('po_id' => $id));
             return $query ->row_array();
         }
         
@@ -22,7 +22,7 @@
                 'po_by' => $this->input->post('po_by'),
                 'authorize_by' => $this->input->post('authorize_by'),
                 'remarks' => $this->input->post('remarks'),
-                // 'status' => $this->input->post('status'),
+                'supplier_id' => $this->input->post('supplier_id'),
                 'updated_by' => 'test',
                 'updated_date' => date('Y-m-d H:i:s'),
                 'created_by' => 'test',
@@ -44,6 +44,7 @@
                 'po_by' => $this->input->post('po_by'),
                 'authorize_by' => $this->input->post('authorize_by'),
                 'remarks' => $this->input->post('remarks'),
+                'supplier_id' => $this->input->post('supplier_id'),
                 'updated_by' => 'test',
                 'updated_date' => date('Y-m-d H:i:s'),
                 'created_by' => 'test',
@@ -122,5 +123,61 @@
         $this->db->delete('txn_po_items');
         return true;
     }
+
+    public function update_req_entry(){
+          
+        //  $id = $this->input->post('req_id');
+          $data = array(
+             
+              'pr_id' => $this->input->post('pr_id'),
+              'status' => $this->input->post('status'),
+              'updated_by' => 'test',
+              'updated_date' => date('Y-m-d H:i:s'),
+              'created_by' => 'test',
+              'created_date' => date('Y-m-d H:i:s')
+
+          );
+
+          $this->db->where('pr_id', $this->input->post('pr_id'));
+          return $this->db->update('txn_pr',$data);
+      }   
+
+    public function get_reqlistDrop() { 
+        // $result = $this->db-> select('req_id, Concat(req_id, "-", req_by, "-", DATE_FORMAT(req_date, "%Y-%m-%d")) as description ') -> get('vwrequest') -> result_array(); 
+         $result = $this->db-> select('pr_id, Concat(req_no, "-", req_by, "-", DATE_FORMAT(req_date, "%Y-%m-%d")) as description ') -> get_where('vwpr',array('status !=' => 'Approved'))-> result_array(); 
+  
+         $items = array(); 
+         foreach($result as $r) { 
+             $items[$r['pr_id']] = $r['description']; 
+         } 
+         $items[''] = 'Select PR Reference'; 
+         return $items; 
+         } 
+
+         public function get_reqlistDropEdit() { 
+            // $result = $this->db-> select('req_id, Concat(req_id, "-", req_by, "-", DATE_FORMAT(req_date, "%Y-%m-%d")) as description ') -> get('vwrequest') -> result_array(); 
+             $result = $this->db-> select('pr_id, Concat(req_no, "-", req_by, "-", DATE_FORMAT(req_date, "%Y-%m-%d")) as description ') -> get_where('vwpr',array('1=' => '1'))-> result_array(); 
+      
+             $items = array(); 
+             foreach($result as $r) { 
+                 $items[$r['pr_id']] = $r['description']; 
+             } 
+             $items[''] = 'Select PR Reference'; 
+             return $items; 
+             } 
+
+         public function get_supplistDrop() { 
+            // $result = $this->db-> select('req_id, Concat(req_id, "-", req_by, "-", DATE_FORMAT(req_date, "%Y-%m-%d")) as description ') -> get('vwrequest') -> result_array(); 
+             $result = $this->db-> select('supplier_id, supplier_name as description ') -> get_where('lkpsuppliers',array('1=' => '1'))-> result_array(); 
+      
+             $items = array(); 
+             foreach($result as $r) { 
+                 $items[$r['supplier_id']] = $r['description']; 
+             } 
+             $items[''] = 'Select Supplier'; 
+             return $items; 
+             } 
+
+         
         
     }

@@ -14,10 +14,22 @@ echo form_open('po/update', $entries); ?>
       
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="pr_id">PR No</label>
       <input type="text" class="form-control" id="pr_no" name="pr_id" aria-describedby="text" placeholder="PR No" value = "<?php echo $po['pr_id']; ?>">
       
+    </div> -->
+
+    <div class="form-group">
+      <label for="contact_person">PR Reference</label>
+      <?php echo form_dropdown('pr_id', $ref, $po['pr_id'], 'class="form-control"');?> 
+      <button class="btn btn-success btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="window.open('<?php echo base_url(); ?>pr/edit/<?php echo '4' ?> ')"  ><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="form-group">
+      <label for="contact_person">Supplier</label>
+      <?php echo form_dropdown('supplier_id', $supp, $po['supplier_id'], 'class="form-control"');?> 
+    
     </div>
           
     <div class="form-group">
