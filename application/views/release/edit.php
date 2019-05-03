@@ -13,7 +13,13 @@ echo form_open('release/update', $entries); ?>
       <input type="text" class="form-control" id="req_date" name="req_date" aria-describedby="text" placeholder="Request Date" value = "<?php echo $release['req_date']; ?>">
       
     </div>
+
     <div class="form-group">
+      <label for="contact_person">Request Reference</label>
+      <?php echo form_dropdown('req_id', $ref, $release['req_id'], 'class="form-control"');?> 
+     
+    </div>
+    <!-- <div class="form-group">
       <label for="contact_person">Department</label>
       <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department" value = "<?php echo $release['dept_id']; ?>">
       
@@ -23,18 +29,18 @@ echo form_open('release/update', $entries); ?>
       <label for="location_id">Location</label>
       <input type="text" class="form-control" id="location_id" name="location_id" aria-describedby="text" placeholder="Location" value = "<?php echo $release['location_id']; ?>">
       
-    </div>
+    </div> -->
 
        
     <div class="form-group">
-      <label for="email">Requested By</label>
-      <input type="text" class="form-control" id="req_by" name="req_by"  aria-describedby="req_by" placeholder="Requested By" value = "<?php echo $release['req_by']; ?>">
+      <label for="email">Release By</label>
+      <input type="text" class="form-control" id="req_by" name="req_by"  aria-describedby="req_by" placeholder="Requested By" value = "<?php echo $release['rel_by']; ?>">
       
     </div>
 
     <div class="form-group">
       <label for="email">Status</label>
-      <select id = "myList" class="form-control">
+      <select id = "myList" class="form-control" name="status">
                <option value = "Approved">Approved</option>
                <option value = "Rejected">Rejected</option>
              

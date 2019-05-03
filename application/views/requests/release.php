@@ -14,7 +14,7 @@
       <th scope="col">Department</th>     
       <th scope="col">Request By</th> 
        <th scope="col">Status</th>
-    
+      <th scope="col">Approved By</th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +22,7 @@
   <tr class="table-secondary">
  
     <td style="width: 50px;"><p data-placement="top" data-toggle="tooltip" title="Edit" ><button class="btn btn-success btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" onclick="location.href='<?php echo base_url(); ?>requests/edit/<?php echo ($req['req_id']); ?> ';"  ><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></button></p></td>
-    <?php echo form_open('release/newrelease/' .$req['req_id']) ?>
+    <?php echo form_open('requests/delete/' .$req['req_id']) ?>
     
     <td style="width: 50px;"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-o" aria-hidden="true"></i></button></p></td>
     </form>
@@ -32,7 +32,7 @@
         <td><?php echo $req['department']; ?></td>        
       <td><?php echo $req['req_by']; ?></td>
        <td><?php echo $req['status']; ?></td>
-    
+       <td><?php echo $req['authorize_by']; ?></td>
           
     </tr>
     <?php endforeach; ?>

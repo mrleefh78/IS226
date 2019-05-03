@@ -7,10 +7,21 @@
         public function get_requests($req_id = FALSE) {
             if ($req_id === FALSE){
                 $query =  $this->db->get('vwrequest');
+               // $query =  $this->db->get_where('vwrequest',array('status' => 'New'));
                 return $query ->result_array();
             }
 
             $query =  $this->db->get_where('vwrequest',array('req_id' => $req_id));
+            return $query ->row_array();
+        }
+
+        public function get_requestsByStat($stat = FALSE) {
+            // if ($stat === FALSE){
+            //     $query =  $this->db->get('vwrequest');
+            //     return $query ->result_array();
+            // }
+
+            $query =  $this->db->get_where('vwrequest',array('status' => 'New'));
             return $query ->row_array();
         }
         

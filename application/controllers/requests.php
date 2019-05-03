@@ -11,6 +11,16 @@
 
         }
 
+        public function release(){
+            
+            $data['title'] = 'List of Requests';
+            $data['requests'] =  $this->request_model->get_requestsByStat('New');
+            $this->load->view('templates/header');
+            $this->load->view('requests/release', $data);
+            $this->load->view('templates/footer');
+
+        }
+
         public function view($req_id = NULL){
             
            
@@ -54,7 +64,9 @@
                 //redirect('suppliers');
 
                 if ($this->request_model->create_request())
-                    {                             
+                    {    
+                      
+                        
                         $this->session->set_flashdata('msg_success','Request created successfully!');
                                 
                     }
@@ -75,6 +87,8 @@
         public function edit($req_id = NULL){
             $data['request'] =  $this->request_model->get_requests($req_id);
             $data['requestitems'] =  $this->request_model->get_request_items($req_id);
+            $data['dept'] = $this->request_model->get_deptlistDrop(); 
+            $data['loc'] = $this->request_model->get_loclistDrop(); 
             if(empty($data['request'])){
                 show_404();
             }
@@ -143,8 +157,15 @@
                         
                     }
 
-                redirect('requests/edit/' .  $req_id);
+                    $this->session->set_flashdata('req_id', $req_id);
+                    $id = $this->session->flashdata('req_id');
+                   $data['req_id'] = $this->uri->segment(3); 
+
+
+                redirect('requests/edit/' .   $data['req_id']);
+                //redirect('requests/get_permission/');
                 //redirect($id);
+               // $this->load->view('requests/edit', $req_id);
 
             }           
 

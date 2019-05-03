@@ -11,7 +11,13 @@ echo form_open('release/create', $entries); ?>
       <input type="text" class="form-control" id="req_date" name="req_date" aria-describedby="text" value =<?php echo date('Y-m-d'); ?> placeholder="Request Date">
       
     </div>
+
     <div class="form-group">
+      <label for="contact_person">Request Reference</label>
+      <?php echo form_dropdown('req_id', $ref, '', 'class="form-control"');?> 
+     
+    </div>
+    <!-- <div class="form-group">
       <label for="department">Department</label>
       <input type="text" class="form-control" id="dept_id" name="dept_id" aria-describedby="text" placeholder="Department">
       
@@ -21,13 +27,22 @@ echo form_open('release/create', $entries); ?>
       <label for="location">Location</label>
       <input type="text" class="form-control" id="location_id" name="location_id" aria-describedby="text" placeholder="Location">
       
+    </div> -->
+    
+    <div class="form-group">
+      <label for="email">Status</label>
+      <select id = "myList" class="form-control" name="status">
+               <option value = "Approved">Approved</option>
+               <option value = "Rejected">Rejected</option>
+             
+             </select>
+      <!-- <input type="text" class="form-control" id="status" name="status"  aria-describedby="status" placeholder="Status" value = "<?php echo $release['status']; ?>"> -->
+      
     </div>
-    
-    
 
     <div class="form-group">
       <label for="req_by">Release By</label>
-      <input type="text" class="form-control" id="contact_no" name="req_by" aria-describedby="text" placeholder="Requested By">
+      <input type="text" class="form-control" id="contact_no" name="req_by" aria-describedby="text" placeholder="Release By">
       
     </div>
     <div class="form-group">
